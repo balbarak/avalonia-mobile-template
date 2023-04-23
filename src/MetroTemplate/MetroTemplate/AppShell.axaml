@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:controls="using:MetroTemplate.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
+             x:Class="MetroTemplate.AppShell">
+
+	<Grid RowDefinitions="20,*">
+		<CheckBox Margin="20" x:Name="chk" >
+			Open Hamburger Menu
+		</CheckBox>
+		<Grid ColumnDefinitions="auto,*" Grid.Row="1" >
+			<controls:HamburgerMenu
+				Background="#f2f2f2"
+				BorderBrush="#dbdbdb"
+				BorderThickness="0 0 1 0"
+				IsOpen="{Binding ElementName=chk,Path=IsChecked}">
+				<controls:HamburgerMenu.Content>
+					<StackPanel>
+						<controls:HamburgerMenuItem >
+							<TextBlock Text="First Item"/>
+						</controls:HamburgerMenuItem>
+
+						<controls:HamburgerMenuItem>
+							<TextBlock Text="Second Item"/>
+						</controls:HamburgerMenuItem>
+
+						<controls:HamburgerMenuItem>
+							<TextBlock Text="Third Item"/>
+						</controls:HamburgerMenuItem>
+					</StackPanel>
+				</controls:HamburgerMenu.Content>
+			</controls:HamburgerMenu>
+		</Grid>
+	</Grid>
+</UserControl>

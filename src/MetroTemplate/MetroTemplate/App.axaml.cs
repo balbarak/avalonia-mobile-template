@@ -1,36 +1,62 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using MetroTemplate.Activation;
 using MetroTemplate.ViewModels;
 using MetroTemplate.Views;
+using Microsoft.Extensions.Hosting;
 
 namespace MetroTemplate
 {
     public partial class App : Application
     {
+        public static IHost AppHost { get; private set; }
+
+        public App()
+        {
+            AppHost = CreateHostBuilder()
+                .Build();
+        }
+
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
         }
 
-        public override void OnFrameworkInitializationCompleted()
+        public async override void OnFrameworkInitializationCompleted()
         {
+            AppHost.Start();
+
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainViewModel()
-                };
+                await AppActivationHandler.ActivateDesktop(desktop);
             }
             else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
             {
-                singleViewPlatform.MainView = new MainView
-                {
-                    DataContext = new MainViewModel()
-                };
+                await AppActivationHandler.Activate(singleViewPlatform);
             }
 
             base.OnFrameworkInitializationCompleted();
+        }
+
+        private IHostBuilder CreateHostBuilder()
+        {
+            var result = Host.CreateDefaultBuilder()
+               .ConfigureAppConfiguration((hostContext, configApp) =>
+               {
+
+               })
+               .ConfigureServices((hostContext, services) =>
+               {
+                   services.AddPageSingleton<AppShellViewModel,AppShell>();
+               })
+               .ConfigureLogging((hostContext, configLogging) =>
+               {
+
+
+               });
+
+            return result;
         }
     }
 }

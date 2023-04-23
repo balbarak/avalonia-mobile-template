@@ -1,5 +1,4 @@
 ﻿using Avalonia;
-using Avalonia.ReactiveUI;
 using Avalonia.Web;
 using MetroTemplate;
 using System.Runtime.Versioning;
@@ -9,7 +8,6 @@ using System.Runtime.Versioning;
 internal partial class Program
 {
     private static void Main(string[] args) => BuildAvaloniaApp()
-        .UseReactiveUI()
         .SetupBrowserApp("out");
 
     public static AppBuilder BuildAvaloniaApp()

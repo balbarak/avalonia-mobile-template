@@ -3,7 +3,6 @@ using Android.Content;
 using Android.OS;
 using Avalonia;
 using Avalonia.Android;
-using Avalonia.ReactiveUI;
 using Application = Android.App.Application;
 
 namespace MetroTemplate.Android
@@ -13,8 +12,7 @@ namespace MetroTemplate.Android
     {
         protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
         {
-            return base.CustomizeAppBuilder(builder)
-                .UseReactiveUI();
+            return base.CustomizeAppBuilder(builder);
         }
 
         protected override void OnCreate(Bundle? savedInstanceState)

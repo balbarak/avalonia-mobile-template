@@ -8,5 +8,5 @@
         x:Class="MetroTemplate.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="MetroTemplate">
-        <views:MainView />
+     
 </Window>

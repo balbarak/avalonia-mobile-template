@@ -1,0 +1,48 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:MetroTemplate.Controls">
+  <Design.PreviewWith>
+    <controls:HamburgerMenu IsOpen="True" Height="100" Width="200" />
+  </Design.PreviewWith>
+
+	<Style Selector="controls|HamburgerMenu">
+		<!-- Set Defaults -->
+		<Setter Property="Template">
+			<ControlTemplate >
+				<Border
+					x:Name="PART_Border"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}">
+					<ContentControl Content="{TemplateBinding Content}"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+	<Style Selector="controls|HamburgerMenuItem">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border
+					x:Name="PART_Border_Menu_Item"
+					Padding="20"
+					Classes="main-border"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}">
+					<ContentControl Content="{TemplateBinding Content}"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+	<Style Selector="Border.main-border">
+		<Setter Property="Background" Value="Transparent"/>
+	</Style>
+	<Style Selector="Border.main-border:pointerover">
+		<Setter Property="Background" Value="Red"/>
+	</Style>
+
+	<Style Selector="controls|HamburgerMenuItem[IsChecked=True] > Border.main-border">
+		<Setter Property="Background" Value="Yellow"/>
+	</Style>
+</Styles>
