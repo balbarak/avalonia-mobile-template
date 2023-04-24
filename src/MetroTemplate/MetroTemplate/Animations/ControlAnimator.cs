@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace MetroTemplate
 {
     public class ControlAnimator : IDisposable
     {
         private DispatcherTimer _timer;
-        private double _targetValue;
         private TimeSpan _duration;
         private TimeSpan _frameRate;
         private int _currentTick;
@@ -21,14 +21,15 @@ namespace MetroTemplate
         private Easing _easing;
         private StyledProperty<double> _property;
         private Control _control;
-        private bool _isReverse;
+        private double _from;
+        private double _to;
 
         public static readonly AttachedProperty<double> WidthProperty = AvaloniaProperty.RegisterAttached<Border, Control, double>("Width");
 
         public ControlAnimator(TimeSpan duration, Easing easing = null)
         {
             _frameRate = TimeSpan.FromSeconds(1 / 120.0);
-          
+
             _duration = duration;
 
             if (easing == null)
@@ -52,26 +53,20 @@ namespace MetroTemplate
             if (control == null)
                 return;
 
-
-            _targetValue = targetValue;
             _control = control;
             _property = property;
 
-            var currentValue = _control.GetValue(_property);
+            _to = targetValue;
+            _from = _control.GetValue(_property);
 
-            //_isReverse = _control.GetValue(_property) > _targetValue;
-            _isReverse =   _targetValue > _control.GetValue(_property);
             _currentTick = 0;
             _timer.Start();
-
         }
 
         private void OnTimerTick(object sender, EventArgs e)
         {
             _currentTick++;
-
-            var currentValue = _control.GetValue(_property);
-
+            
             if (_currentTick > _totalTicks)
             {
                 _timer.Stop();
@@ -80,19 +75,7 @@ namespace MetroTemplate
 
             var percentage = (float)_currentTick / _totalTicks;
             var easingPercentage = _easing.Ease(percentage);
-            var finalValue = 0.0;
-
-            if (_isReverse)
-            {
-                finalValue = currentValue - currentValue * easingPercentage;
-
-                if (finalValue > _targetValue)
-                    finalValue = _targetValue;
-            }
-            else
-            {
-                finalValue = _targetValue * easingPercentage;
-            }
+            var finalValue = _from + _to * easingPercentage;
 
             _control.SetValue(_property, finalValue);
         }

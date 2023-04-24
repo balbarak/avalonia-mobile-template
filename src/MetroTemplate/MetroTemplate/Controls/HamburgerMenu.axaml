@@ -6,10 +6,16 @@
 	</Design.PreviewWith>
 
 	<Style Selector="controls|HamburgerMenu">
-
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid x:Name="PART_Container">
+					<Rectangle  Classes="rect-backdrop"
+								Fill="Black"
+								IsVisible="False"
+								Opacity="0"
+								IsHitTestVisible="{TemplateBinding IsOpen}"
+							   x:Name="PART_Backdrop">
+					</Rectangle>
 					<Border
 						x:Name="PART_Border"
 						Width="300"
@@ -23,9 +29,6 @@
 						</Border.RenderTransform>
 					</Border>
 				</Grid>
-				
-
-
 			</ControlTemplate>
 		</Setter>
 	</Style>
@@ -37,7 +40,6 @@
 					x:Name="PART_Border_Menu_Item"
 					Padding="20"
 					Classes="main-border"
-					
 					BorderBrush="{TemplateBinding BorderBrush}"
 					BorderThickness="{TemplateBinding BorderThickness}">
 					<ContentControl Content="{TemplateBinding Content}"/>
@@ -49,6 +51,7 @@
 	<Style Selector="Border.main-border">
 		<Setter Property="Background" Value="Transparent"/>
 	</Style>
+
 	<Style Selector="Border.main-border:pointerover">
 		<Setter Property="Background" Value="Red"/>
 	</Style>
@@ -56,4 +59,43 @@
 	<Style Selector="controls|HamburgerMenuItem[IsChecked=True] > Border.main-border">
 		<Setter Property="Background" Value="Yellow"/>
 	</Style>
+
+	<!--<Style Selector="Rectangle.rect-backdrop">
+		<Setter Property="Opacity" Value="0"/>
+		<Setter Property="IsVisible" Value="false"/>
+	</Style>
+	
+	<Style Selector="Rectangle.rect-backdrop[IsHitTestVisible=True]">
+	
+		<Style.Animations>
+			<Animation Duration="0:0:0.3" FillMode="Forward" >
+				<KeyFrame Cue="0%">
+					<Setter Property="Opacity" Value="0.0"/>
+				</KeyFrame>
+				<KeyFrame Cue="1%">
+					<Setter Property="IsVisible" Value="True"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="Opacity" Value=".7"/>
+					<Setter Property="IsVisible" Value="True"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+
+	<Style Selector="Rectangle.rect-backdrop[IsHitTestVisible=False]">
+		
+		<Style.Animations>
+			<Animation Duration="0:0:0.3"  FillMode="Both">
+				<KeyFrame Cue="0%">
+					<Setter Property="Opacity" Value=".7"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="Opacity" Value="0"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>-->
+
+	
 </Styles>
