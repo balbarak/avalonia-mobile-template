@@ -11,8 +11,9 @@
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>
+	
     <Application.Styles>
-        <FluentTheme Mode="Light"/>
+        <FluentTheme />
 		<StyleInclude Source="/Controls/HamburgerMenu.axaml"/>
 		<StyleInclude Source="/Controls/ProgressRing.axaml"/>
 	</Application.Styles>

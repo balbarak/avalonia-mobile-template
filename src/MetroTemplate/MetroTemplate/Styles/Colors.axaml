@@ -3,14 +3,7 @@
 					xmlns:controls="clr-namespace:AvaloniaAttachedProperty.Controls;assembly=AvaloniaAttachedProperty"
                     xmlns:sys="using:System">
 
-	<ResourceDictionary.ThemeDictionaries>
-		
-		<ResourceDictionary x:Key="Default">
-			<Color x:Key="BrandColor">Red</Color>
-		</ResourceDictionary>
-		<ResourceDictionary x:Key="Dark">
-			<Color x:Key="BrandColor">Blue</Color>
-		</ResourceDictionary>
-	</ResourceDictionary.ThemeDictionaries>
+	<Color x:Key="BrandColor">Red</Color>
+	<Color x:Key="PageBackgroundColor">#cfe2ff</Color>
 
 </ResourceDictionary>

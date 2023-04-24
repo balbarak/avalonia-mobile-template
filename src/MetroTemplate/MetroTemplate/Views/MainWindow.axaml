@@ -10,5 +10,8 @@
         x:Class="MetroTemplate.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="MetroTemplate">
-     
+
+	<Border Background="Red">
+		<TextBlock Text="What !"/>
+	</Border>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Threading;
 using MetroTemplate.Services;
 using MetroTemplate.ViewModels;
 using MetroTemplate.Views;
@@ -29,8 +30,8 @@ namespace MetroTemplate.Activation
             var navService = App.AppHost.Services.GetService<INavigationService>();
 
             var mainView = App.AppHost.Services.GetService<AppShell>();
-
             app.MainWindow = new MainWindow();
+
             app.MainWindow.Content = App.AppHost.Services.GetService<AppShell>();
 
             await navService.GoToView<HomeViewModel>();

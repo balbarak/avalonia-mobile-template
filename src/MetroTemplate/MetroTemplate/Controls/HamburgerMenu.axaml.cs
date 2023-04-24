@@ -25,7 +25,8 @@ public class HamburgerMenu : TemplatedControl
     private double _menuWidth;
 
     public static readonly StyledProperty<bool> IsOpenProperty =
-        AvaloniaProperty.Register<HamburgerMenu, bool>(nameof(IsOpen), defaultValue: false, notifying: OnIsOpenPropertyChanged);
+        AvaloniaProperty.Register<HamburgerMenu, bool>(nameof(IsOpen), defaultValue: false,coerce: OnIsOpenPropertyChanged);
+
 
     public static readonly StyledProperty<object> ContentProperty =
         AvaloniaProperty.Register<HamburgerMenu, object>(nameof(IsOpen), defaultValue: null);
@@ -78,9 +79,9 @@ public class HamburgerMenu : TemplatedControl
         return base.MeasureOverride(availableSize);
     }
 
-    private void OnIsOpenChanged()
+    private void OnIsOpenChanged(bool isOpen)
     {
-        if (IsOpen)
+        if (isOpen)
         {
             OpenWithAnimation();
         }
@@ -105,12 +106,14 @@ public class HamburgerMenu : TemplatedControl
         _backdropAnimator.StartAnimation(-1, _backdrop, Rectangle.OpacityProperty);
     }
 
-    private static void OnIsOpenPropertyChanged(IAvaloniaObject arg1, bool arg2)
+    private static bool OnIsOpenPropertyChanged(AvaloniaObject arg1, bool value)
     {
-        if (arg1 is HamburgerMenu menu && arg2)
+        if (arg1 is HamburgerMenu menu)
         {
-            menu.OnIsOpenChanged();
+            menu.OnIsOpenChanged(value);
         }
+
+        return value;
     }
 
 }
