@@ -2,8 +2,10 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using MetroTemplate.Activation;
+using MetroTemplate.Services;
 using MetroTemplate.ViewModels;
 using MetroTemplate.Views;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace MetroTemplate
@@ -48,7 +50,12 @@ namespace MetroTemplate
                })
                .ConfigureServices((hostContext, services) =>
                {
+                   services.AddSingleton<INavigationService, NavigationService>();
+
                    services.AddPageSingleton<AppShellViewModel,AppShell>();
+
+                   services.AddPageTransient<ThemeViewModel, ThemeView>();
+                   services.AddPageTransient<HomeViewModel, HomeView>();
                })
                .ConfigureLogging((hostContext, configLogging) =>
                {

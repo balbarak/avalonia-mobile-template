@@ -5,10 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
 			 xmlns:skp="clr-namespace:Avalonia.Controls.Skia;assembly=Avalonia.Controls.Skia"
+			 xmlns:vm="using:MetroTemplate.ViewModels"
+			 x:DataType="vm:AppShellViewModel"
+			 x:Name="appShell"
              x:Class="MetroTemplate.AppShell">
+
+	<Design.DataContext>
+		<vm:AppShellViewModel />
+	</Design.DataContext>
 
 	<Grid>
 		<Grid RowDefinitions="70,*">
+			
 			<Border
 				Grid.RowSpan="1"
 				Background="Beige" IsHitTestVisible="True" Padding="16" Tapped="OnMenuClicked">
@@ -17,15 +25,11 @@
 					Fill="Black"
 					Data="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
 			</Border>
+
+			<TransitioningContentControl 
+				Grid.Row="1"
+				Content="{Binding ElementName=appShell,Path=CurrentView}"/>
 			
-			<!--Here goes content-->
-			<Grid Grid.Row="1" Background="Yellow">
-				
-				<StackPanel Margin="16" Spacing="20">
-					<TextBlock Text="Contnets goes here !"/>
-					<controls:ProgressRing IsActive="True" Height="50" Width="50" />
-				</StackPanel>
-			</Grid>
 		</Grid>
 
 		<controls:HamburgerMenu
@@ -33,24 +37,23 @@
 					Background="#f2f2f2"
 					BorderBrush="#dbdbdb"
 					BorderThickness="0 0 1 0">
-			<controls:HamburgerMenu.Content>
-				<Grid RowDefinitions="140,*">
-					<StackPanel Grid.Row="1">
-						<controls:HamburgerMenuItem Tapped="OnMenuItemTapped">
-							<TextBlock Text="First Item"/>
-						</controls:HamburgerMenuItem>
 
-						<controls:HamburgerMenuItem Tapped="OnMenuItemTapped">
-							<TextBlock Text="Second Item"/>
-						</controls:HamburgerMenuItem>
+			<Grid RowDefinitions="140,*">
+				<StackPanel Grid.Row="1">
+					<controls:HamburgerMenuItem Command="{Binding GoToHome}">
+						<TextBlock Text="Home"/>
+					</controls:HamburgerMenuItem>
 
-						<controls:HamburgerMenuItem Tapped="OnMenuItemTapped">
-							<TextBlock Text="Third Item"/>
-						</controls:HamburgerMenuItem>
-					</StackPanel>
-				</Grid>
+					<controls:HamburgerMenuItem Command="{Binding GoToTheme}">
+						<TextBlock Text="Theme"/>
+					</controls:HamburgerMenuItem>
 
-			</controls:HamburgerMenu.Content>
+					<controls:HamburgerMenuItem>
+						<TextBlock Text="Third Item"/>
+					</controls:HamburgerMenuItem>
+				</StackPanel>
+			</Grid>
+
 		</controls:HamburgerMenu>
 	</Grid>
 

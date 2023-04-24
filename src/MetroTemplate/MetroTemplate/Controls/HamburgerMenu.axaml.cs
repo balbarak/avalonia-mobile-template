@@ -6,6 +6,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Shapes;
 using Avalonia.Input;
 using Avalonia.Media;
+using Avalonia.Metadata;
 using Microsoft.Extensions.Logging.Console;
 using System;
 
@@ -34,7 +35,9 @@ public class HamburgerMenu : TemplatedControl
 
     public bool IsOpen { get => GetValue<bool>(IsOpenProperty); set => SetValue(IsOpenProperty, value); }
 
+    [Content]
     public object Content { get => GetValue<object>(ContentProperty); set => SetValue(ContentProperty, value); }
+
     public double MenuPositionX { get => GetValue<double>(MenuPositionXProperty); set => SetValue(MenuPositionXProperty, value); }
 
     public HamburgerMenu()

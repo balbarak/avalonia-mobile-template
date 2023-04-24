@@ -17,13 +17,15 @@ namespace MetroTemplate.Services
 
         public async Task GoToView<TViewModel>() where TViewModel : ViewModelBase
         {
-            var mainViewModel = Services.GetService<MainViewModel>();
-
             PageMapping.TryGetValue(typeof(TViewModel), out var pageType);
 
+            var shell = Services.GetService<AppShell>();
             var page = Services.GetService(pageType) as UserControl;
-
             var viewModel = page.DataContext as ViewModelBase;
+
+            await viewModel.OnAppearing();
+
+            shell.CurrentView = page;
 
         }
     }
