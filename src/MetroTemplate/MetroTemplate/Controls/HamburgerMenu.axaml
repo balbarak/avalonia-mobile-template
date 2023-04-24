@@ -1,21 +1,31 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:MetroTemplate.Controls">
-  <Design.PreviewWith>
-    <controls:HamburgerMenu IsOpen="True" Height="100" Width="200" />
-  </Design.PreviewWith>
+	<Design.PreviewWith>
+		<controls:HamburgerMenu IsOpen="True" Height="100" Width="200" />
+	</Design.PreviewWith>
 
 	<Style Selector="controls|HamburgerMenu">
-		<!-- Set Defaults -->
+
 		<Setter Property="Template">
-			<ControlTemplate >
-				<Border
-					x:Name="PART_Border"
-					Background="{TemplateBinding Background}"
-					BorderBrush="{TemplateBinding BorderBrush}"
-					BorderThickness="{TemplateBinding BorderThickness}">
-					<ContentControl Content="{TemplateBinding Content}"/>
-				</Border>
+			<ControlTemplate>
+				<Grid x:Name="PART_Container">
+					<Border
+						x:Name="PART_Border"
+						Width="300"
+						HorizontalAlignment="Left"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+						<ContentControl Content="{TemplateBinding Content}"/>
+						<Border.RenderTransform>
+							<TranslateTransform X="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=MenuPositionX}"/>
+						</Border.RenderTransform>
+					</Border>
+				</Grid>
+				
+
+
 			</ControlTemplate>
 		</Setter>
 	</Style>
@@ -27,6 +37,7 @@
 					x:Name="PART_Border_Menu_Item"
 					Padding="20"
 					Classes="main-border"
+					
 					BorderBrush="{TemplateBinding BorderBrush}"
 					BorderThickness="{TemplateBinding BorderThickness}">
 					<ContentControl Content="{TemplateBinding Content}"/>

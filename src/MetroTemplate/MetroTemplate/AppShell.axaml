@@ -21,7 +21,6 @@
 		
 		<controls:HamburgerMenu
 					x:Name="Menu"
-					HorizontalAlignment="Left"
 					Background="#f2f2f2"
 					BorderBrush="#dbdbdb"
 					BorderThickness="0 0 1 0">

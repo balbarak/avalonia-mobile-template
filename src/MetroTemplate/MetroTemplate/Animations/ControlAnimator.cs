@@ -25,10 +25,10 @@ namespace MetroTemplate
 
         public static readonly AttachedProperty<double> WidthProperty = AvaloniaProperty.RegisterAttached<Border, Control, double>("Width");
 
-        public ControlAnimator(double targetValue, TimeSpan duration, Easing easing = null)
+        public ControlAnimator(TimeSpan duration, Easing easing = null)
         {
             _frameRate = TimeSpan.FromSeconds(1 / 120.0);
-            _targetValue = targetValue;
+          
             _duration = duration;
 
             if (easing == null)
@@ -47,14 +47,20 @@ namespace MetroTemplate
         }
 
 
-        public void StartAnimation(Control control, StyledProperty<double> property)
+        public void StartAnimation(double targetValue, Control control, StyledProperty<double> property)
         {
             if (control == null)
                 return;
 
+
+            _targetValue = targetValue;
             _control = control;
             _property = property;
-            _isReverse = _control.GetValue(_property) > _targetValue;
+
+            var currentValue = _control.GetValue(_property);
+
+            //_isReverse = _control.GetValue(_property) > _targetValue;
+            _isReverse =   _targetValue > _control.GetValue(_property);
             _currentTick = 0;
             _timer.Start();
 
@@ -80,7 +86,7 @@ namespace MetroTemplate
             {
                 finalValue = currentValue - currentValue * easingPercentage;
 
-                if (finalValue < _targetValue)
+                if (finalValue > _targetValue)
                     finalValue = _targetValue;
             }
             else
