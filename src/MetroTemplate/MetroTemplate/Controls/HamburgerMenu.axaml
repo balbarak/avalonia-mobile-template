@@ -60,6 +60,7 @@
 		<Setter Property="Background" Value="Yellow"/>
 	</Style>
 
+
 	<!--<Style Selector="Rectangle.rect-backdrop">
 		<Setter Property="Opacity" Value="0"/>
 		<Setter Property="IsVisible" Value="false"/>

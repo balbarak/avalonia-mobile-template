@@ -17,27 +17,39 @@
 					Fill="Black"
 					Data="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
 			</Border>
+			
+			<!--Here goes content-->
+			<Grid Grid.Row="1" Background="Yellow">
+				
+				<StackPanel Margin="16" Spacing="20">
+					<TextBlock Text="Contnets goes here !"/>
+					<controls:ProgressRing IsActive="True" Height="50" Width="50" />
+				</StackPanel>
+			</Grid>
 		</Grid>
-		
+
 		<controls:HamburgerMenu
 					x:Name="Menu"
 					Background="#f2f2f2"
 					BorderBrush="#dbdbdb"
 					BorderThickness="0 0 1 0">
 			<controls:HamburgerMenu.Content>
-				<StackPanel>
-					<controls:HamburgerMenuItem >
-						<TextBlock Text="First Item"/>
-					</controls:HamburgerMenuItem>
+				<Grid RowDefinitions="140,*">
+					<StackPanel Grid.Row="1">
+						<controls:HamburgerMenuItem Tapped="OnMenuItemTapped">
+							<TextBlock Text="First Item"/>
+						</controls:HamburgerMenuItem>
 
-					<controls:HamburgerMenuItem>
-						<TextBlock Text="Second Item"/>
-					</controls:HamburgerMenuItem>
+						<controls:HamburgerMenuItem Tapped="OnMenuItemTapped">
+							<TextBlock Text="Second Item"/>
+						</controls:HamburgerMenuItem>
 
-					<controls:HamburgerMenuItem>
-						<TextBlock Text="Third Item"/>
-					</controls:HamburgerMenuItem>
-				</StackPanel>
+						<controls:HamburgerMenuItem Tapped="OnMenuItemTapped">
+							<TextBlock Text="Third Item"/>
+						</controls:HamburgerMenuItem>
+					</StackPanel>
+				</Grid>
+
 			</controls:HamburgerMenu.Content>
 		</controls:HamburgerMenu>
 	</Grid>

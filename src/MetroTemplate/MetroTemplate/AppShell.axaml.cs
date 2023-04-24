@@ -15,5 +15,10 @@ namespace MetroTemplate
         {
             Menu.IsOpen = !Menu.IsOpen;
         }
+
+        private void OnMenuItemTapped(object sender,TappedEventArgs args)
+        {
+            Menu.IsOpen = false;
+        }
     }
 }

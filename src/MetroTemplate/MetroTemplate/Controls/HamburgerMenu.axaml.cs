@@ -39,9 +39,9 @@ public class HamburgerMenu : TemplatedControl
 
     public HamburgerMenu()
     {
-        _openAnimator = new ControlAnimator(TimeSpan.FromSeconds(.3));
-        _closeAnimator = new ControlAnimator(TimeSpan.FromSeconds(.3));
-        _backdropAnimator = new ControlAnimator(TimeSpan.FromSeconds(.3));
+        _openAnimator = new ControlAnimator(TimeSpan.FromSeconds(.2));
+        _closeAnimator = new ControlAnimator(TimeSpan.FromSeconds(.2));
+        _backdropAnimator = new ControlAnimator(TimeSpan.FromSeconds(.2));
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
