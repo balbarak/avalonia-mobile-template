@@ -28,7 +28,7 @@ namespace MetroTemplate
 
         public ControlAnimator(TimeSpan duration, Easing easing = null)
         {
-            _frameRate = TimeSpan.FromSeconds(1 / 120.0);
+            _frameRate = TimeSpan.FromSeconds(1 / 140.0);
 
             _duration = duration;
 

@@ -61,7 +61,7 @@ public class HamburgerMenu : TemplatedControl
 
     protected override Size MeasureOverride(Size availableSize)
     {
-        _menuWidth = (availableSize.Width / 100) * 60;
+        _menuWidth = (availableSize.Width / 100) * 70;
 
         if (_menuWidth > 450)
             _menuWidth = 450;
