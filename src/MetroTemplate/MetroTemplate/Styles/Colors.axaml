@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:controls="clr-namespace:AvaloniaAttachedProperty.Controls;assembly=AvaloniaAttachedProperty"
+                    xmlns:sys="using:System">
+
+	<ResourceDictionary.ThemeDictionaries>
+		
+		<ResourceDictionary x:Key="Default">
+			<Color x:Key="BrandColor">Red</Color>
+		</ResourceDictionary>
+		<ResourceDictionary x:Key="Dark">
+			<Color x:Key="BrandColor">Blue</Color>
+		</ResourceDictionary>
+	</ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

@@ -9,19 +9,19 @@ namespace MetroTemplate
 {
     public partial class AppShell : UserControl
     {
-        public static readonly StyledProperty<object> CurrentViewProperty =
-            AvaloniaProperty.Register<AppShell, object>(nameof(CurrentView), defaultValue: null, notifying: OnCurrentViewChanged);
+        public static readonly StyledProperty<UserControl> CurrentViewProperty =
+            AvaloniaProperty.Register<AppShell, UserControl>(nameof(CurrentView), defaultValue: null, notifying: OnCurrentViewChanged);
 
-        public object CurrentView { get => GetValue<object>(CurrentViewProperty); set => SetValue(CurrentViewProperty, value); }
+        public UserControl CurrentView { get => GetValue<UserControl>(CurrentViewProperty); set => SetValue(CurrentViewProperty, value); }
 
         public AppShell()
         {
             InitializeComponent();
         }
 
-        private void OnMenuItemTapped(object sender,TappedEventArgs args)
+        private void OnMenuClicked(object sender,TappedEventArgs args)
         {
-            Menu.IsOpen = false;
+            Menu.IsOpen = !Menu.IsOpen;
         }
 
         private void OnViewChanged()
