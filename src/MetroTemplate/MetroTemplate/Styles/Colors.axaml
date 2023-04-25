@@ -6,7 +6,17 @@
 	<ResourceDictionary.ThemeDictionaries>
 		
 		<ResourceDictionary x:Key="Default">
-			<Color x:Key="BrandColor">Yellow</Color>
+			<Color x:Key="BrandColor">#1E9272</Color>
+			<Color x:Key="PageBackground">#E0E0E8</Color>
+			<Color x:Key="TextColor">#212529</Color>
+
+			<Color x:Key="Mute">#919191</Color>
+			<Color x:Key="Success">#198754</Color>
+			<Color x:Key="Warning">#CA9C00</Color>
+			<Color x:Key="Danger">#DC3545</Color>
+			
+			<Color x:Key="ShellSelectedItem">#F1F1F1</Color>
+		
 		</ResourceDictionary>
 		<ResourceDictionary x:Key="Dark">
 			<Color x:Key="BrandColor">Red</Color>

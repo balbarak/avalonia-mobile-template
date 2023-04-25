@@ -53,11 +53,11 @@
 	</Style>
 
 	<Style Selector="Border.main-border:pointerover">
-		<Setter Property="Background" Value="Red"/>
+		<Setter Property="Background" Value="{DynamicResource ShellSelectedItem}"/>
 	</Style>
 
 	<Style Selector="controls|HamburgerMenuItem[IsChecked=True] > Border.main-border">
-		<Setter Property="Background" Value="Yellow"/>
+		<Setter Property="Background" Value="{DynamicResource ShellSelectedItem}"/>
 	</Style>
 
 
