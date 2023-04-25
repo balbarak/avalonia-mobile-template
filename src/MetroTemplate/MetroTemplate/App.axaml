@@ -1,6 +1,7 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:MetroTemplate"
+			 RequestedThemeVariant="Light"
              x:Class="MetroTemplate.App">
 
 
@@ -13,7 +14,8 @@
 	</Application.Resources>
 	
     <Application.Styles>
-        <FluentTheme />
+        <!--<FluentTheme />-->
+		<SimpleTheme />
 		<StyleInclude Source="/Controls/HamburgerMenu.axaml"/>
 		<StyleInclude Source="/Controls/ProgressRing.axaml"/>
 	</Application.Styles>
