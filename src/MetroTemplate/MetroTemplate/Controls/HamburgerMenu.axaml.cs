@@ -17,6 +17,7 @@ public class HamburgerMenu : TemplatedControl
     private Border _border;
     private Grid _container;
     private Rectangle _backdrop;
+    private bool _isMoving;
 
     private ControlAnimator _openAnimator;
     private ControlAnimator _closeAnimator;
@@ -43,9 +44,19 @@ public class HamburgerMenu : TemplatedControl
 
     public HamburgerMenu()
     {
-        _openAnimator = new ControlAnimator(TimeSpan.FromSeconds(.2));
-        _closeAnimator = new ControlAnimator(TimeSpan.FromSeconds(.2));
-        _backdropAnimator = new ControlAnimator(TimeSpan.FromSeconds(.2));
+        _openAnimator = new ControlAnimator(TimeSpan.FromSeconds(.3));
+        _closeAnimator = new ControlAnimator(TimeSpan.FromSeconds(.3));
+        _backdropAnimator = new ControlAnimator(TimeSpan.FromSeconds(.3));
+
+        _openAnimator.OnAnimationCompleted += (s, e) =>
+        {
+            _isMoving = false;
+        };
+
+        _closeAnimator.OnAnimationCompleted += (s, e) =>
+        {
+            _isMoving = false;
+        };
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -81,6 +92,11 @@ public class HamburgerMenu : TemplatedControl
 
     private void OnIsOpenChanged(bool isOpen)
     {
+        if (_isMoving)
+            return;
+
+        _isMoving = true;
+
         if (isOpen)
         {
             OpenWithAnimation();

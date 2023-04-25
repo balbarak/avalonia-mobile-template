@@ -24,11 +24,13 @@ namespace MetroTemplate
         private double _from;
         private double _to;
 
+        public event EventHandler OnAnimationCompleted;
+
         public static readonly AttachedProperty<double> WidthProperty = AvaloniaProperty.RegisterAttached<Border, Control, double>("Width");
 
         public ControlAnimator(TimeSpan duration, Easing easing = null)
         {
-            _frameRate = TimeSpan.FromSeconds(1 / 140.0);
+            _frameRate = TimeSpan.FromSeconds(1 / 120.0);
 
             _duration = duration;
 
@@ -61,6 +63,7 @@ namespace MetroTemplate
 
             _currentTick = 0;
             _timer.Start();
+
         }
 
         private void OnTimerTick(object sender, EventArgs e)
@@ -70,6 +73,9 @@ namespace MetroTemplate
             if (_currentTick > _totalTicks)
             {
                 _timer.Stop();
+                
+                OnAnimationCompleted?.Invoke(this, EventArgs.Empty);
+
                 return;
             }
 

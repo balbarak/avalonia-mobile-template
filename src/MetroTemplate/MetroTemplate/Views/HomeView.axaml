@@ -3,9 +3,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
-			 Background="{DynamicResource PageBackgroundColor}"
+			 Background="{DynamicResource PageBackground}"
 			 x:Class="MetroTemplate.Views.HomeView">
-  
-	
-<TextBlock Text="Home PAge" Foreground="{DynamicResource BrandColor}"/>
+
+
+	<Grid Classes="container">
+		<ScrollViewer>
+			<RefreshContainer>
+				<StackPanel>
+					<Border Classes="card">
+						<StackPanel>
+							<TextBlock Text="Hello"/>
+						</StackPanel>
+					</Border>
+				</StackPanel>
+			</RefreshContainer>
+		</ScrollViewer>
+
+
+	</Grid>
 </UserControl>

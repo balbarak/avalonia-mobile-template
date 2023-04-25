@@ -11,6 +11,23 @@
 
 	<Style Selector="TextBlock">
 		<Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
-		<Setter Property="FontSize" Value="16"/>
+		<Setter Property="FontSize" Value="14"/>
+	</Style>
+
+	<Style Selector="UserControl">
+		<Setter Property="Background" Value="Red"/>
+	</Style>
+	
+	<Style Selector="Border.card">
+		<Setter Property="Padding" Value="16"/>
+		<Setter Property="CornerRadius" Value="4"/>
+		<Setter Property="Background" Value="White"/>
+		<Setter Property="BorderThickness" Value=".4"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource Mute100}"/>
+	</Style>
+
+	<Style Selector="Grid.container">
+		<Setter Property="Margin" Value="16"/>
+		<Setter Property="Background" Value="Transparent"/>
 	</Style>
 </Styles>
