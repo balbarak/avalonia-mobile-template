@@ -18,11 +18,10 @@
 	<UserControl.Styles>
 		<Style Selector="Rectangle.backdrop">
 			<Setter Property="Opacity" Value="0"/>
-			
+			<Setter Property="Fill" Value="Black"/>
 		</Style>
 
 		<Style Selector="Rectangle.backdrop[IsHitTestVisible=True]">
-			<Setter Property="Fill" Value="Black"/>
 			<Setter Property="Opacity" Value="0"/>
 			<Style.Animations>
 				<Animation Duration="0:0:0.30" FillMode="Both">
@@ -31,6 +30,20 @@
 					</KeyFrame>
 					<KeyFrame Cue="100%" >
 						<Setter Property="Opacity" Value=".6"/>
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+
+		<Style Selector="Rectangle.backdrop[IsHitTestVisible=False]">
+			<Setter Property="Opacity" Value="0"/>
+			<Style.Animations>
+				<Animation Duration="0:0:0.30" FillMode="Both">
+					<KeyFrame Cue="0%">
+						<Setter Property="Opacity" Value="0.6"/>
+					</KeyFrame>
+					<KeyFrame Cue="100%" >
+						<Setter Property="Opacity" Value="0"/>
 					</KeyFrame>
 				</Animation>
 			</Style.Animations>
