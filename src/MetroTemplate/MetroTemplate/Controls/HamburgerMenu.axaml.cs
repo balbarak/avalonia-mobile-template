@@ -9,6 +9,7 @@ using Avalonia.Media;
 using Avalonia.Metadata;
 using Microsoft.Extensions.Logging.Console;
 using System;
+using System.Diagnostics;
 
 namespace MetroTemplate.Controls;
 
@@ -50,12 +51,16 @@ public class HamburgerMenu : TemplatedControl
 
         _openAnimator.OnAnimationCompleted += (s, e) =>
         {
+
+            Debug.WriteLine("open completed !!");
             _isMoving = false;
         };
 
         _closeAnimator.OnAnimationCompleted += (s, e) =>
         {
             _isMoving = false;
+
+            Debug.WriteLine("close completed !!");
         };
     }
 
@@ -81,7 +86,7 @@ public class HamburgerMenu : TemplatedControl
         if (_menuWidth > 450)
             _menuWidth = 450;
 
-        if (MenuPositionX == 0)
+        if (MenuPositionX <= 0)
             MenuPositionX = -_menuWidth;
 
         if (_border != null)
@@ -94,6 +99,8 @@ public class HamburgerMenu : TemplatedControl
     {
         if (_isMoving)
             return;
+
+        Debug.WriteLine("Movviing ....");
 
         _isMoving = true;
 

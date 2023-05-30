@@ -10,26 +10,84 @@
 			 x:Name="appShell"
              x:Class="MetroTemplate.AppShell">
 
+
 	<Design.DataContext>
 		<vm:AppShellViewModel />
 	</Design.DataContext>
 
-	<Grid>
-		<Grid RowDefinitions="70,*">
+	<UserControl.Styles>
+		<Style Selector="Rectangle.backdrop">
+			<Setter Property="Opacity" Value="0"/>
 			
-			<Border
-				Grid.RowSpan="1"
-				Background="{DynamicResource BrandColor}" IsHitTestVisible="True" Padding="16" Tapped="OnMenuClicked">
+		</Style>
+
+		<Style Selector="Rectangle.backdrop[IsHitTestVisible=True]">
+			<Setter Property="Fill" Value="Black"/>
+			<Setter Property="Opacity" Value="0"/>
+			<Style.Animations>
+				<Animation Duration="0:0:0.30" FillMode="Both">
+					<KeyFrame Cue="0%">
+						<Setter Property="Opacity" Value="0.0"/>
+					</KeyFrame>
+					<KeyFrame Cue="100%" >
+						<Setter Property="Opacity" Value=".6"/>
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+	</UserControl.Styles>
+	<SplitView Grid.Row="1" x:Name="split" IsPaneOpen="False"
+			   DisplayMode="Overlay">
+
+		<SplitView.Pane>
+			<TextBlock Text="Pane"
+					   FontSize="24"
+					   VerticalAlignment="Center"
+					   HorizontalAlignment="Center"/>
+		</SplitView.Pane>
+
+		<Grid RowDefinitions="80,*">
+
+			<Button Tapped="OnMenuClicked" Background="{DynamicResource	BrandColor}">
 				<Path
 					VerticalAlignment="Center"
 					Fill="White"
 					Data="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
-			</Border>
 
-			<TransitioningContentControl 
+			</Button>
+			<TransitioningContentControl
 				Grid.Row="1"
 				Content="{Binding ElementName=appShell,Path=CurrentView}"/>
-			
+
+			<Rectangle Grid.RowSpan="2"
+					   IsVisible="True"
+					   IsHitTestVisible="{Binding ElementName=split,Path=IsPaneOpen}"
+					   Fill="Black"
+					   Classes="backdrop"
+					   VerticalAlignment="Stretch"
+					   HorizontalAlignment="Stretch"/>
+		</Grid>
+	</SplitView>
+
+
+	<!--<Grid>
+		<Grid RowDefinitions="70,*">
+
+			<Border
+				Grid.RowSpan="1"
+				Background="{DynamicResource BrandColor}" IsHitTestVisible="True" Padding="16">
+				<Button Tapped="OnMenuClicked" HorizontalAlignment="Left">
+					<Path
+						VerticalAlignment="Center"
+						Fill="White"
+						Data="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+				</Button>
+			</Border>
+
+			<TransitioningContentControl
+				Grid.Row="1"
+				Content="{Binding ElementName=appShell,Path=CurrentView}"/>
+
 		</Grid>
 
 		<controls:HamburgerMenu
@@ -55,6 +113,7 @@
 			</Grid>
 
 		</controls:HamburgerMenu>
-	</Grid>
+	
+	</Grid>-->
 
 </UserControl>

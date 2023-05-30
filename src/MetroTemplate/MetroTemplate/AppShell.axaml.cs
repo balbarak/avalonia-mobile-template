@@ -22,13 +22,20 @@ namespace MetroTemplate
 
         private void OnMenuClicked(object sender,TappedEventArgs args)
         {
-            Menu.IsOpen = !Menu.IsOpen;
+            split.IsPaneOpen = !split.IsPaneOpen;
         }
 
         private void OnViewChanged(UserControl newView)
         {
-            if (Menu.IsOpen)
-                Menu.IsOpen = false;
+            if (split.IsPaneOpen)
+                split.IsPaneOpen = false;
+        }
+
+        protected override Size MeasureOverride(Size availableSize)
+        {
+            split.OpenPaneLength = (availableSize.Width / 100) * 70;
+            
+            return base.MeasureOverride(availableSize);
         }
 
         private static UserControl OnCurrentViewChanged(AvaloniaObject arg1, UserControl value)
