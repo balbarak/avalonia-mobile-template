@@ -1,11 +1,48 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:controls="using:MetroTemplate.Controls"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
              x:Class="MetroTemplate.Views.ThemeView">
 
-	<Border Height="20" VerticalAlignment="Top">
-		<TextBlock Text="W"/>
+	<Border Classes="page">
+		<Border Classes="card" VerticalAlignment="Top">
+			<StackPanel Spacing="10">
+
+				<TextBlock>
+					Buttons
+				</TextBlock>
+				<Button>
+					Brand
+				</Button>
+
+				<Button>
+					Primary
+				</Button>
+
+				<controls:RippleEffect
+					RippleFill="#F1F2F2"
+					RippleOpacity="0.2">
+					<Border Background="#212121"
+							Height="55"
+							CornerRadius="3">
+						<TextBlock HorizontalAlignment="Center"
+								   VerticalAlignment="Center"
+								   FontSize="20"
+								   Foreground="#E6E7E8"
+								   Text="RIPPLE" />
+					</Border>
+				</controls:RippleEffect>
+
+				<TextBlock Text="hs"/>
+
+				<controls:TestTemplate>
+					<TextBlock Text="his"/>
+				</controls:TestTemplate>
+
+			</StackPanel>
+		</Border>
 	</Border>
+
 </UserControl>
