@@ -55,6 +55,27 @@
 	<Style Selector="Button">
 		<Setter Property="Height" Value="40"/>
 		<Setter Property="CornerRadius" Value="8"/>
+		<Setter Property="Foreground" Value="White"/>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<controls:RippleEffect
+					RippleFill="#F1F2F2"
+					RippleOpacity="0.2"
+					IsHitTestVisible="True">
+					<Border Background="{DynamicResource BrandColor}"
+							Height="40"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<ContentPresenter 
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Foreground="{TemplateBinding Foreground}"
+							Content="{TemplateBinding Content}"/>
+					</Border>
+
+				</controls:RippleEffect>
+			</ControlTemplate>
+		</Setter>
 	</Style>
 	
 </Styles>

@@ -9,12 +9,12 @@
 	<Border Classes="page">
 		<Border Classes="card" VerticalAlignment="Top">
 			<StackPanel Spacing="10">
-
 				<TextBlock>
-					Buttons
+					<TextBlock Text="Text Block" />
 				</TextBlock>
+				
 				<Button>
-					Brand
+					<TextBlock Text="Text Block" Foreground="White" />
 				</Button>
 
 				<Button>
@@ -35,11 +35,22 @@
 					</Border>
 				</controls:RippleEffect>
 
-				<TextBlock Text="hs"/>
+				<controls:RippleEffect
+					RippleFill="#F1F2F2"
+					RippleOpacity="0.2"
+					IsHitTestVisible="True">
+					<Border Background="#212121"
+							Height="55"
+							CornerRadius="3">
+						<Button Background="Transparent"
+							IsHitTestVisible="False">
+							Hello I am ripple button
+						</Button>
+					</Border>
 
-				<controls:TestTemplate>
-					<TextBlock Text="his"/>
-				</controls:TestTemplate>
+				</controls:RippleEffect>
+
+				<TextBlock Text="hs"/>
 
 			</StackPanel>
 		</Border>
