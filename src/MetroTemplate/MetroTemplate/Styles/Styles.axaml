@@ -55,8 +55,7 @@
 	<Style Selector="Button">
 		<Setter Property="Height" Value="40"/>
 		<Setter Property="CornerRadius" Value="8"/>
-		<Setter Property="Foreground" Value="White"/>
-
+		<Setter Property="Foreground" Value="Red"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<controls:RippleEffect
@@ -69,13 +68,16 @@
 						<ContentPresenter 
 							HorizontalAlignment="Center"
 							VerticalAlignment="Center"
-							Foreground="{TemplateBinding Foreground}"
+							Foreground="Red"
 							Content="{TemplateBinding Content}"/>
 					</Border>
-
 				</controls:RippleEffect>
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	
+
+	<Style Selector="Button TextBlock">
+		<Setter Property="Foreground"
+				Value="White" />
+	</Style>
 </Styles>
