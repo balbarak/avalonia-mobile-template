@@ -8,20 +8,29 @@
 
 	<Border Classes="page">
 		<Border Classes="card" VerticalAlignment="Top">
+			
 			<StackPanel Spacing="10">
-				<TextBlock>
-					<TextBlock Text="Text Block" />
+				<TextBlock Classes="header">
+					<TextBlock Text="Buttons" />
 				</TextBlock>
 				
 				<Button>
-					<TextBlock Text="Text Block" Foreground="White" />
+					Brand
 				</Button>
 
 				<Button>
 					Primary
 				</Button>
 
-				<controls:RippleEffect
+				<Button>
+					Success
+				</Button>
+				
+				<Button>
+					Danger
+				</Button>
+
+				<!--<controls:RippleEffect
 					RippleFill="#F1F2F2"
 					RippleOpacity="0.2">
 					<Border Background="#212121"
@@ -33,24 +42,9 @@
 								   Foreground="#E6E7E8"
 								   Text="RIPPLE" />
 					</Border>
-				</controls:RippleEffect>
+				</controls:RippleEffect>-->
 
-				<controls:RippleEffect
-					RippleFill="#F1F2F2"
-					RippleOpacity="0.2"
-					IsHitTestVisible="True">
-					<Border Background="#212121"
-							Height="55"
-							CornerRadius="3">
-						<Button Background="Transparent"
-							IsHitTestVisible="False">
-							Hello I am ripple button
-						</Button>
-					</Border>
 
-				</controls:RippleEffect>
-
-				<TextBlock Text="hs"/>
 
 			</StackPanel>
 		</Border>

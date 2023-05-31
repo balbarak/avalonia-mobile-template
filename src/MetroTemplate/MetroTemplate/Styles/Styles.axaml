@@ -62,7 +62,7 @@
 					RippleFill="#F1F2F2"
 					RippleOpacity="0.2"
 					IsHitTestVisible="True">
-					<Border Background="{DynamicResource BrandColor}"
+					<Border Background="{TemplateBinding Background}"
 							Height="40"
 							CornerRadius="{TemplateBinding CornerRadius}">
 						<ContentPresenter 
@@ -77,7 +77,11 @@
 	</Style>
 
 	<Style Selector="Button TextBlock">
-		<Setter Property="Foreground"
-				Value="White" />
+		<Setter Property="Foreground" Value="White" />
+		<Setter Property="FontSize" Value="14" />
+	</Style>
+
+	<Style Selector="TextBlock.header">
+		<Setter Property="FontSize" Value="16"/>
 	</Style>
 </Styles>
