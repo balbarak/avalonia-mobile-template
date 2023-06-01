@@ -15,6 +15,10 @@
 		<FontFamily x:Key="Tajawal">
 			/Assets/Fonts/Tajawal-Regular.ttf#Tajawal
 		</FontFamily>
+
+		<FontFamily x:Key="Icon">
+			/Assets/Fonts/fa-solid-900.ttf#Font Awesome 6 Free Solid
+		</FontFamily>
 		
 	</Application.Resources>
 	

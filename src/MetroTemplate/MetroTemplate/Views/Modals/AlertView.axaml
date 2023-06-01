@@ -61,8 +61,8 @@
 					CornerRadius="8"
 					Background="White">
 
-			<TextBlock>
-				Hello World !@
+			<TextBlock FontFamily="{StaticResource Icon}" Text="&#xF00c;">
+				
 			</TextBlock>
 
 			<Border.Effect>

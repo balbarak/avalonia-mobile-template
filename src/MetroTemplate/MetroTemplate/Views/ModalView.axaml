@@ -11,7 +11,7 @@
 
 			<StackPanel Spacing="10">
 				<Button Command="{Binding OpenAlertCommand}">
-					Open Modals
+					Open Alert Modal
 				</Button>
 			</StackPanel>
 		</Border>
