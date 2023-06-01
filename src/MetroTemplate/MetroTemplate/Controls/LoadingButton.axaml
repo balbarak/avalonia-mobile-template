@@ -1,0 +1,61 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:MetroTemplate.Controls">
+	<Design.PreviewWith>
+		<controls:LoadingButton />
+	</Design.PreviewWith>
+
+	<Style Selector="controls|LoadingButton">
+		<Setter Property="Height" Value="40"/>
+		<Setter Property="CornerRadius" Value="8"/>
+		<Setter Property="Background" Value="{TemplateBinding	Background}"/>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>
+					<controls:RippleEffect
+						x:Name="buttonContent"
+							  RippleFill="#F1F2F2"
+							  RippleOpacity="0.2"
+							  IsHitTestVisible="True">
+						<Border Background="{TemplateBinding Background}"
+								Height="40"
+								CornerRadius="{TemplateBinding CornerRadius}">
+							<ContentPresenter
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"
+								Foreground="Red"
+								Content="{TemplateBinding Content}"/>
+						</Border>
+					</controls:RippleEffect>
+
+					<Border Background="{TemplateBinding Background}"
+							x:Name="ring"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Height="40">
+						<controls:ProgressRing
+							
+							Width="25" Height="25" Foreground="White"/>
+					</Border>
+				</Grid>
+
+			</ControlTemplate>
+		</Setter>
+
+	</Style>
+
+	<Style Selector="controls|LoadingButton[IsLoading=False] Border#ring">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+	<Style Selector="controls|LoadingButton[IsLoading=False] controls|RippleEffect#buttonContent">
+		<Setter Property="IsVisible" Value="True"/>
+	</Style>
+
+	<Style Selector="controls|LoadingButton[IsLoading=True] Border#ring">
+		<Setter Property="IsVisible" Value="True"/>
+	</Style>
+	<Style Selector="controls|LoadingButton[IsLoading=True] controls|RippleEffect#buttonContent">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+
+</Styles>

@@ -39,6 +39,9 @@
 							Danger
 						</Button>
 
+						<controls:LoadingButton IsLoading="{Binding IsButtonLoading}" Command="{Binding LoadingButtonCommand}">
+							Loading BUtton
+						</controls:LoadingButton>
 
 					</StackPanel>
 				</Border>

@@ -115,4 +115,12 @@
 	<Style Selector="Button.btn-warning">
 		<Setter Property="Background" Value="{DynamicResource Warning}" />
 	</Style>
+
+	<Style Selector="controls|LoadingButton">
+		<Setter Property="Background" Value="{DynamicResource BrandColor}" />
+	</Style>
+
+	<Style Selector="controls|LoadingButton TextBlock">
+		<Setter Property="Foreground" Value="White" />
+	</Style>
 </Styles>
