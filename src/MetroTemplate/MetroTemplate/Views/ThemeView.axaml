@@ -66,54 +66,8 @@
 					</StackPanel>
 
 				</Border>
-				<Border Classes="card">
-					<StackPanel Spacing="10">
-						<TextBlock Classes="card-title">
-							Typography
-						</TextBlock>
-						<TextBlock Classes="h1" FontFamily="{StaticResource	Tajawal}">
-							This is h1 Classes
-						</TextBlock>
-
-						<TextBlock
-							Classes="h2"
-							TextWrapping="Wrap"
-							FontFamily="{StaticResource	Tajawal}">
-							This is h2 Classes
-						</TextBlock>
-
-						<TextBlock
-							Classes="h3"
-							FontFamily="{StaticResource	Tajawal}">
-							This is h3 Clasess
-						</TextBlock>
-					</StackPanel>
-
-				</Border>
-				<Border Classes="card">
-					<StackPanel Spacing="10">
-						<TextBlock Classes="card-title">
-							Typography
-						</TextBlock>
-						<TextBlock Classes="h1" FontFamily="{StaticResource	Tajawal}">
-							This is h1 Classes
-						</TextBlock>
-
-						<TextBlock
-							Classes="h2"
-							TextWrapping="Wrap"
-							FontFamily="{StaticResource	Tajawal}">
-							This is h2 Classes
-						</TextBlock>
-
-						<TextBlock
-							Classes="h3"
-							FontFamily="{StaticResource	Tajawal}">
-							This is h3 Clasess
-						</TextBlock>
-					</StackPanel>
-
-				</Border>
+				
+				
 
 
 			</StackPanel>

@@ -9,6 +9,8 @@ namespace MetroTemplate.Services
 {
     public interface INavigationService
     {
+        void CloseAlert();
         Task GoToView<TViewModel>() where TViewModel : ViewModelBase;
+        Task ShowAlert(string title, string msg);
     }
 }

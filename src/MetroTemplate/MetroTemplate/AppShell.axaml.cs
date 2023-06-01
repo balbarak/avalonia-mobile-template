@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using MetroTemplate.Controls;
+using MetroTemplate.Views;
 using System;
 
 namespace MetroTemplate
@@ -12,8 +13,14 @@ namespace MetroTemplate
         public static readonly StyledProperty<UserControl> CurrentViewProperty =
             AvaloniaProperty.Register<AppShell, UserControl>(nameof(CurrentView), defaultValue: null,coerce: OnCurrentViewChanged);
 
-       
-        public UserControl CurrentView { get => GetValue<UserControl>(CurrentViewProperty); set => SetValue(CurrentViewProperty, value); }
+
+        public static readonly StyledProperty<AlertView> AlertViewProperty =
+            AvaloniaProperty.Register<AppShell, AlertView>(nameof(Alert), defaultValue: null);
+
+
+        public UserControl CurrentView { get => GetValue(CurrentViewProperty); set => SetValue(CurrentViewProperty, value); }
+
+        public AlertView Alert { get => GetValue(AlertViewProperty); set => SetValue(AlertViewProperty, value); }
 
         public AppShell()
         {

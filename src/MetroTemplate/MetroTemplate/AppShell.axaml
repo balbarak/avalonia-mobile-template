@@ -6,6 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
 			 xmlns:skp="clr-namespace:Avalonia.Controls.Skia;assembly=Avalonia.Controls.Skia"
 			 xmlns:vm="using:MetroTemplate.ViewModels"
+			 xmlns:views="using:MetroTemplate.Views"
 			 x:DataType="vm:AppShellViewModel"
 			 x:Name="appShell"
              x:Class="MetroTemplate.AppShell">
@@ -54,53 +55,60 @@
 		</Style>
 	</UserControl.Styles>
 
-	<SplitView Grid.Row="1" x:Name="split" IsPaneOpen="False"
-			   DisplayMode="Overlay">
+	<Grid>
+		<SplitView  x:Name="split" IsPaneOpen="False"
+				   DisplayMode="Overlay">
 
-		<SplitView.Pane>
-			<Grid RowDefinitions="250,*" Background="White">
-				<StackPanel Grid.Row="1">
-					<controls:HamburgerMenuItem Command="{Binding GoToHome}">
-						<Grid ColumnDefinitions="20,*">
-							<TextBlock Text="Home" Classes="menuText" Grid.Column="1" />
-						</Grid>
-					</controls:HamburgerMenuItem>
+			<SplitView.Pane>
+				<Grid RowDefinitions="250,*" Background="White">
+					<StackPanel Grid.Row="1">
+						<controls:HamburgerMenuItem Command="{Binding GoToHome}">
+							<Grid ColumnDefinitions="20,*">
+								<TextBlock Text="Home" Classes="menuText" Grid.Column="1" />
+							</Grid>
+						</controls:HamburgerMenuItem>
 
-					<controls:HamburgerMenuItem Command="{Binding GoToTheme}">
-						<Grid ColumnDefinitions="20,*">
-							<TextBlock Text="Theme" Classes="menuText" Grid.Column="1" />
-						</Grid>
-					</controls:HamburgerMenuItem>
+						<controls:HamburgerMenuItem Command="{Binding GoToTheme}">
+							<Grid ColumnDefinitions="20,*">
+								<TextBlock Text="Theme" Classes="menuText" Grid.Column="1" />
+							</Grid>
+						</controls:HamburgerMenuItem>
 
-					<controls:HamburgerMenuItem>
-						<Grid ColumnDefinitions="20,*">
-							<TextBlock Text="Settings" Classes="menuText" Grid.Column="1" />
-						</Grid>
-					</controls:HamburgerMenuItem>
-				</StackPanel>
-			</Grid>
-		</SplitView.Pane>
+						<controls:HamburgerMenuItem Command="{Binding GoToModal}">
+							<Grid ColumnDefinitions="20,*">
+								<TextBlock Text="Modals" Classes="menuText" Grid.Column="1" />
+							</Grid>
+						</controls:HamburgerMenuItem>
 
-		<Grid RowDefinitions="80,*">
-			<Grid Classes="header" Background="{DynamicResource BrandColor}">
-				<Grid ColumnDefinitions="*,*,*" Margin="20" >
-					<Button
-						BorderThickness="0"
-						HorizontalAlignment="Left"
-						Tapped="OnMenuClicked" IsDefault="True" Background="Transparent">
-						<Path
-							VerticalAlignment="Center"
-							HorizontalAlignment="Left"
-							Fill="White"
-							Data="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
-
-					</Button>
+						<controls:HamburgerMenuItem>
+							<Grid ColumnDefinitions="20,*">
+								<TextBlock Text="Settings" Classes="menuText" Grid.Column="1" />
+							</Grid>
+						</controls:HamburgerMenuItem>
+					</StackPanel>
 				</Grid>
-			</Grid>
+			</SplitView.Pane>
 
-			<ContentControl Grid.Row="1" Content="{Binding ElementName=appShell,Path=CurrentView}"/>
+			<Grid RowDefinitions="80,*">
+				<Grid Classes="header" Background="{DynamicResource BrandColor}">
+					<Grid ColumnDefinitions="*,*,*" Margin="20" >
+						<Button
+							BorderThickness="0"
+							HorizontalAlignment="Left"
+							Tapped="OnMenuClicked" IsDefault="True" Background="Transparent">
+							<Path
+								VerticalAlignment="Center"
+								HorizontalAlignment="Left"
+								Fill="White"
+								Data="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
 
-			<!--<TransitioningContentControl
+						</Button>
+					</Grid>
+				</Grid>
+
+				<ContentControl Grid.Row="1" Content="{Binding ElementName=appShell,Path=CurrentView}"/>
+
+				<!--<TransitioningContentControl
 				Grid.Row="1"
 				Content="{Binding ElementName=appShell,Path=CurrentView}">
 				<TransitioningContentControl.PageTransition>
@@ -108,16 +116,19 @@
 				</TransitioningContentControl.PageTransition>
 			</TransitioningContentControl>-->
 
-			<Rectangle Grid.RowSpan="2"
-					   IsVisible="True"
-					   IsHitTestVisible="{Binding ElementName=split,Path=IsPaneOpen}"
-					   Fill="Black"
-					   Classes="backdrop"
-					   VerticalAlignment="Stretch"
-					   HorizontalAlignment="Stretch"/>
-		</Grid>
-	</SplitView>
+				<Rectangle Grid.RowSpan="2"
+						   IsVisible="True"
+						   IsHitTestVisible="{Binding ElementName=split,Path=IsPaneOpen}"
+						   Fill="Black"
+						   Classes="backdrop"
+						   VerticalAlignment="Stretch"
+						   HorizontalAlignment="Stretch"/>
+			</Grid>
 
+		</SplitView>
+
+		<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>
+	</Grid>
 
 
 </UserControl>

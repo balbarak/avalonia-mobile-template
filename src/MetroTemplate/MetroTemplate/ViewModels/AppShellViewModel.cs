@@ -13,10 +13,13 @@ namespace MetroTemplate.ViewModels
         public ICommand GoToHome { get; }
         public ICommand GoToTheme { get; }
 
+        public ICommand GoToModal { get; }
+
         public AppShellViewModel()
         {
             GoToHome = new AsyncRelayCommand(_navService.GoToView<HomeViewModel>);
             GoToTheme = new AsyncRelayCommand(_navService.GoToView<ThemeViewModel>);
+            GoToModal = new AsyncRelayCommand(_navService.GoToView<ModalViewModel>);
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using Avalonia.Controls;
 using MetroTemplate.ViewModels;
+using MetroTemplate.Views;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,29 @@ namespace MetroTemplate.Services
 
             shell.CurrentView = page;
 
+        }
+
+        public async Task ShowAlert(string title,string msg)
+        {
+            var alert = new AlertView(title,msg);
+            var shell = Services.GetService<AppShell>();
+
+            shell.Alert = alert;
+            alert.IsOpen = true;
+        }
+
+        public void CloseAlert()
+        {
+            var shell = Services.GetService<AppShell>();
+
+            var alert = shell.Alert;
+
+            if (alert == null)
+                return;
+
+            alert.IsOpen = false;
+
+            //shell.Alert = null;
         }
     }
 }
