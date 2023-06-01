@@ -1,0 +1,67 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:local="using:MetroTemplate"
+        xmlns:controls="using:MetroTemplate.Controls">
+	<Design.PreviewWith>
+		<Grid Height="200" Width="200">
+			<controls:MaterialRing IsRunning="True" Color="Red" />
+		</Grid>
+	</Design.PreviewWith>
+
+	<Style Selector="controls|MaterialRing">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Viewbox Stretch="Uniform">
+					<Grid Height="100" Width="100" x:Name="LayoutRootMain"
+						   RenderTransformOrigin="0.5,0.5">
+						<Ellipse x:Name="PART_Ring"
+								 RenderTransformOrigin="0.5,0.5"
+								 StrokeThickness="14"
+								 StrokeDashArray="46.75"
+								 Stroke="{TemplateBinding Color}"
+								 IsVisible="{TemplateBinding IsRunning}"
+								 StrokeLineCap="Round"
+								StrokeDashOffset="46.75">
+						
+						</Ellipse>
+						
+					</Grid>
+				</Viewbox>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+	<Style Selector="Ellipse#PART_Ring">
+		<Style.Animations>
+			<Animation Duration="0:0:1.4" IterationCount="INFINITE" FillMode="Both">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="0" />
+					<Setter Property="StrokeDashOffset" Value="46.75" />
+				</KeyFrame>
+				<KeyFrame Cue="50%">
+					<Setter Property="RotateTransform.Angle" Value="135" />
+					<Setter Property="StrokeDashOffset" Value="11.6875" />
+
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="450" />
+					<Setter Property="StrokeDashOffset" Value="46.75" />
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+
+
+	<Style Selector="Grid#LayoutRootMain">
+		<Style.Animations>
+			<Animation Duration="0:0:1.4" IterationCount="INFINITE" FillMode="Both">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="0" />
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="270" />
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+</Styles>

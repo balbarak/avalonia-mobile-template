@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
+			 xmlns:ctl="using:MetroTemplate.Controls"
 			 Background="{DynamicResource PageBackground}"
 			 x:Class="MetroTemplate.Views.HomeView">
 
@@ -10,11 +11,15 @@
 	<Grid Classes="container">
 		<ScrollViewer>
 			<RefreshContainer>
-				<StackPanel>
+				<StackPanel Spacing="10">
 					<Border Classes="card">
 						<StackPanel>
 							<TextBlock Text="Hello"/>
 						</StackPanel>
+					</Border>
+
+					<Border Classes="card">
+						<ctl:MaterialRing IsRunning="true" Color="Red"/>
 					</Border>
 				</StackPanel>
 			</RefreshContainer>

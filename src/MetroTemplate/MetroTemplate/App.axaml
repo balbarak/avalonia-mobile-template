@@ -29,6 +29,7 @@
 		<StyleInclude Source="/Controls/ProgressRing.axaml"/>
 		<StyleInclude Source="/Controls/RippleEffect.axaml"/>
 		<StyleInclude Source="/Controls/LoadingButton.axaml"/>
+		<StyleInclude Source="/Controls/MaterialRing.axaml"/>
 		<StyleInclude Source="/Styles/Styles.axaml"/>
 	</Application.Styles>
 </Application>
