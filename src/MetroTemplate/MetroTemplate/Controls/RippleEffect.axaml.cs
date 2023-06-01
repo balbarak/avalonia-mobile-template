@@ -18,6 +18,16 @@ namespace MetroTemplate.Controls
             AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleOpacity), defaultValue: 0);
 
 
+        public static readonly StyledProperty<Thickness> FromMarginProperty =
+            AvaloniaProperty.Register<RippleEffect, Thickness>(nameof(RippleOpacity), defaultValue: new Thickness());
+
+        public static readonly StyledProperty<Thickness> ToMarginProperty =
+            AvaloniaProperty.Register<RippleEffect, Thickness>(nameof(RippleOpacity), defaultValue: new Thickness());
+
+        public static readonly StyledProperty<double> ToWidthProperty =
+            AvaloniaProperty.Register<RippleEffect, double>(nameof(RippleOpacity), defaultValue:0);
+
+
         private Ellipse _circle;
         private Animation _ripple;
         private Point _pointer;
@@ -29,6 +39,11 @@ namespace MetroTemplate.Controls
         public IBrush RippleFill { get => GetValue(RippleFillProperty); set => SetValue(RippleFillProperty, value); }
 
         public double RippleOpacity { get => GetValue(RippleOpacityProperty); set => SetValue(RippleOpacityProperty, value);  }
+
+
+        public Thickness FromMargin { get => GetValue(FromMarginProperty); set => SetValue(FromMarginProperty, value); }
+        public Thickness ToMargin { get => GetValue(ToMarginProperty); set => SetValue(ToMarginProperty, value); }
+        public double ToWidth { get => GetValue(ToWidthProperty); set => SetValue(ToWidthProperty, value); }
 
         public RippleEffect()
         {
@@ -44,11 +59,11 @@ namespace MetroTemplate.Controls
 
                 var maxWidth = Math.Max(Bounds.Width, Bounds.Height) * 2.2D;
 
-                _toWidth.Value = maxWidth;
-                _fromMargin.Value = _circle.Margin = new Thickness(_pointer.X, _pointer.Y, 0, 0);
-                _toMargin.Value = new Thickness(_pointer.X - maxWidth / 2, _pointer.Y - maxWidth / 2, 0, 0);
+                ToWidth = maxWidth;
+                FromMargin = _circle.Margin = new Thickness(_pointer.X, _pointer.Y, 0, 0);
+                ToMargin = new Thickness(_pointer.X - maxWidth / 2, _pointer.Y - maxWidth / 2, 0, 0);
 
-                await _ripple.RunAsync(_circle, null);
+                await _ripple.RunAsync(_circle);
 
                 _isRunning = false;
             });

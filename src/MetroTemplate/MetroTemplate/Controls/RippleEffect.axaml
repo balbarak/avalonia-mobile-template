@@ -30,12 +30,12 @@
 							  <Style.Animations>
 								  <Animation Duration="0:0:0.35">
 									  <KeyFrame Cue="0%">
-										  <Setter Property="Margin" Value="0" />
+										  <Setter Property="Margin" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=FromMargin}" />
 										  <Setter Property="Width" Value="0" />
 									  </KeyFrame>
 									  <KeyFrame Cue="100%">
-										  <Setter Property="Margin" Value="0" />
-										  <Setter Property="Width" Value="0" />
+										  <Setter Property="Margin" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ToMargin}" />
+										  <Setter Property="Width" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ToWidth}" />
 									  </KeyFrame>
 								  </Animation>
 							  </Style.Animations>
