@@ -31,15 +31,10 @@ namespace MetroTemplate.Controls
         private Ellipse _circle;
         private Animation _ripple;
         private Point _pointer;
-        private IAnimationSetter _toWidth;
-        private IAnimationSetter _fromMargin;
-        private IAnimationSetter _toMargin;
         private bool _isRunning;
 
         public IBrush RippleFill { get => GetValue(RippleFillProperty); set => SetValue(RippleFillProperty, value); }
-
         public double RippleOpacity { get => GetValue(RippleOpacityProperty); set => SetValue(RippleOpacityProperty, value);  }
-
 
         public Thickness FromMargin { get => GetValue(FromMarginProperty); set => SetValue(FromMarginProperty, value); }
         public Thickness ToMargin { get => GetValue(ToMarginProperty); set => SetValue(ToMarginProperty, value); }
@@ -77,9 +72,6 @@ namespace MetroTemplate.Controls
 
             var style = _circle.Styles[0] as Style;
             _ripple = style.Animations[0] as Animation;
-            _toWidth = _ripple.Children[1].Setters[1];
-            _fromMargin = _ripple.Children[0].Setters[0];
-            _toMargin = _ripple.Children[1].Setters[0];
 
             style.Animations.Remove(_ripple);
         }
