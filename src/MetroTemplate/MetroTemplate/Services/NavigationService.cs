@@ -1,4 +1,5 @@
 ﻿using Avalonia.Controls;
+using Avalonia.Threading;
 using MetroTemplate.ViewModels;
 using MetroTemplate.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,23 +33,31 @@ namespace MetroTemplate.Services
 
         public async Task ShowAlert(string title,string msg)
         {
-            var alert = new AlertView(title,msg);
-            var shell = Services.GetService<AppShell>();
+            Dispatcher.UIThread.Invoke(() =>
+            {
+                var alert = new AlertView(title, msg);
+                var shell = Services.GetService<AppShell>();
 
-            shell.Alert = alert;
-            alert.IsOpen = true;
+                shell.Alert = alert;
+                alert.IsOpen = true;
+            });
+            
         }
 
         public void CloseAlert()
         {
-            var shell = Services.GetService<AppShell>();
+            Dispatcher.UIThread.Invoke(() =>
+            {
+                var shell = Services.GetService<AppShell>();
 
-            var alert = shell.Alert;
+                var alert = shell.Alert;
 
-            if (alert == null)
-                return;
+                if (alert == null)
+                    return;
 
-            alert.IsOpen = false;
+                alert.IsOpen = false;
+            });
+            
 
             //shell.Alert = null;
         }
