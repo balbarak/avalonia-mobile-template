@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Input;
 
 namespace MetroTemplate.Views
 {
@@ -8,5 +9,12 @@ namespace MetroTemplate.Views
         {
             InitializeComponent();
         }
+
+
+        private void OnTapped(object sender, TappedEventArgs args)
+        {
+
+        }
+
     }
 }

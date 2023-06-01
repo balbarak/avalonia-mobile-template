@@ -15,6 +15,18 @@
 		<Setter Property="FontSize" Value="14"/>
 	</Style>
 
+	<Style Selector="TextBlock.h1">
+		<Setter Property="FontSize" Value="26"/>
+	</Style>
+
+	<Style Selector="TextBlock.h2">
+		<Setter Property="FontSize" Value="24"/>
+	</Style>
+
+	<Style Selector="TextBlock.h3">
+		<Setter Property="FontSize" Value="20"/>
+	</Style>
+
 	<Style Selector="Border.page">
 		<Setter Property="Background" Value="{DynamicResource PageBackground}"/>
 		<Setter Property="Padding" Value="16"/>
@@ -26,6 +38,11 @@
 		<Setter Property="Background" Value="White"/>
 		<Setter Property="BorderThickness" Value=".4"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource Mute100}"/>
+	</Style>
+
+	<Style Selector="TextBlock.card-title">
+		<Setter Property="FontSize" Value="18"/>
+		<Setter Property="Margin" Value="0,0,0,14"/>
 	</Style>
 
 	<Style Selector="Grid.container">
@@ -55,7 +72,7 @@
 	<Style Selector="Button">
 		<Setter Property="Height" Value="40"/>
 		<Setter Property="CornerRadius" Value="8"/>
-		<Setter Property="Foreground" Value="Red"/>
+		<Setter Property="Background" Value="{DynamicResource BrandColor}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<controls:RippleEffect
@@ -83,5 +100,19 @@
 
 	<Style Selector="TextBlock.header">
 		<Setter Property="FontSize" Value="16"/>
+	</Style>
+
+	<Style Selector="Button.btn-danger">
+		<Setter Property="Background" Value="{DynamicResource Danger}" />
+	</Style>
+
+	<Style Selector="Button.btn-success">
+		<Setter Property="Background" Value="{DynamicResource Success}" />
+	</Style>
+	<Style Selector="Button.btn-primary">
+		<Setter Property="Background" Value="{DynamicResource Primary}" />
+	</Style>
+	<Style Selector="Button.btn-warning">
+		<Setter Property="Background" Value="{DynamicResource Warning}" />
 	</Style>
 </Styles>

@@ -11,6 +11,11 @@
 				<ResourceInclude Source='/Styles/Colors.axaml'/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
+
+		<FontFamily x:Key="Tajawal">
+			/Assets/Fonts/Tajawal-Regular.ttf#Tajawal
+		</FontFamily>
+		
 	</Application.Resources>
 	
     <Application.Styles>

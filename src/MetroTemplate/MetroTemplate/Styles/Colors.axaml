@@ -13,6 +13,7 @@
 			<Color x:Key="Mute">#919191</Color>
 			<Color x:Key="Mute100">#C7C8D5</Color>
 			
+			<Color x:Key="Primary">#384ad7</Color>
 			<Color x:Key="Success">#198754</Color>
 			<Color x:Key="Warning">#CA9C00</Color>
 			<Color x:Key="Danger">#DC3545</Color>

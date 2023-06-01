@@ -7,6 +7,10 @@
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
+		<None Remove="Assets\Fonts\Roboto-Bold.ttf" />
+		<None Remove="Assets\Fonts\Roboto-Regular.ttf" />
+		<None Remove="Assets\Fonts\Tajawal-Bold.ttf" />
+		<None Remove="Assets\Fonts\Tajawal-Regular.ttf" />
 		<None Remove="Assets\menu-icon.svg" />
 		<TrimmerRootDescriptor Include="Roots.xml" />
 	</ItemGroup>

@@ -7,47 +7,119 @@
              x:Class="MetroTemplate.Views.ThemeView">
 
 	<Border Classes="page">
-		<Border Classes="card" VerticalAlignment="Top">
+
+		<ScrollViewer
 			
-			<StackPanel Spacing="10">
-				<TextBlock Classes="header">
-					<TextBlock Text="Buttons" />
-				</TextBlock>
-				
-				<Button>
-					Brand
-				</Button>
+			VerticalScrollBarVisibility="Auto">
 
-				<Button>
-					Primary
-				</Button>
+			<StackPanel Spacing="10" >
+				<Border Classes="card" VerticalAlignment="Top">
 
-				<Button>
-					Success
-				</Button>
-				
-				<Button>
-					Danger
-				</Button>
+					<StackPanel Spacing="10">
+						<TextBlock Classes="card-title">
+							Buttons
+						</TextBlock>
 
-				<!--<controls:RippleEffect
-					RippleFill="#F1F2F2"
-					RippleOpacity="0.2">
-					<Border Background="#212121"
-							Height="55"
-							CornerRadius="3">
-						<TextBlock HorizontalAlignment="Center"
-								   VerticalAlignment="Center"
-								   FontSize="20"
-								   Foreground="#E6E7E8"
-								   Text="RIPPLE" />
-					</Border>
-				</controls:RippleEffect>-->
+						<Button Tapped="OnTapped">
+							Brand
+						</Button>
 
+						<Button Classes="btn-primary">
+							Primary
+						</Button>
+
+						<Button Classes="btn-success">
+							Success
+						</Button>
+
+						<Button Classes="btn-warning">
+							Warning
+						</Button>
+						<Button Classes="btn-danger">
+							Danger
+						</Button>
+
+
+					</StackPanel>
+				</Border>
+				<Border Classes="card">
+					<StackPanel Spacing="10">
+						<TextBlock Classes="card-title">
+							Typography
+						</TextBlock>
+						<TextBlock Classes="h1" FontFamily="{StaticResource	Tajawal}">
+							This is h1 Classes
+						</TextBlock>
+
+						<TextBlock
+							Classes="h2"
+							TextWrapping="Wrap"
+							FontFamily="{StaticResource	Tajawal}">
+							This is h2 Classes
+						</TextBlock>
+
+						<TextBlock
+							Classes="h3"
+							FontFamily="{StaticResource	Tajawal}">
+							This is h3 Clasess
+						</TextBlock>
+					</StackPanel>
+
+				</Border>
+				<Border Classes="card">
+					<StackPanel Spacing="10">
+						<TextBlock Classes="card-title">
+							Typography
+						</TextBlock>
+						<TextBlock Classes="h1" FontFamily="{StaticResource	Tajawal}">
+							This is h1 Classes
+						</TextBlock>
+
+						<TextBlock
+							Classes="h2"
+							TextWrapping="Wrap"
+							FontFamily="{StaticResource	Tajawal}">
+							This is h2 Classes
+						</TextBlock>
+
+						<TextBlock
+							Classes="h3"
+							FontFamily="{StaticResource	Tajawal}">
+							This is h3 Clasess
+						</TextBlock>
+					</StackPanel>
+
+				</Border>
+				<Border Classes="card">
+					<StackPanel Spacing="10">
+						<TextBlock Classes="card-title">
+							Typography
+						</TextBlock>
+						<TextBlock Classes="h1" FontFamily="{StaticResource	Tajawal}">
+							This is h1 Classes
+						</TextBlock>
+
+						<TextBlock
+							Classes="h2"
+							TextWrapping="Wrap"
+							FontFamily="{StaticResource	Tajawal}">
+							This is h2 Classes
+						</TextBlock>
+
+						<TextBlock
+							Classes="h3"
+							FontFamily="{StaticResource	Tajawal}">
+							This is h3 Clasess
+						</TextBlock>
+					</StackPanel>
+
+				</Border>
 
 
 			</StackPanel>
-		</Border>
+
+
+		</ScrollViewer>
 	</Border>
 
 </UserControl>
