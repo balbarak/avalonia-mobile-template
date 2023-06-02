@@ -46,23 +46,22 @@ namespace MetroTemplate.Services
         public async Task NavigateTo<TViewModel>() where TViewModel : ViewModelBase
         {
             PageMapping.TryGetValue(typeof(TViewModel), out var pageType);
-            
+
             var shell = Services.GetService<AppShell>();
             var page = Services.GetService(pageType) as UserControl;
             var viewModel = page.DataContext as ViewModelBase;
             var shellViewModel = shell.DataContext as AppShellViewModel;
-
-            shell.ContentTrans.PageTransition = new PageSlide(TimeSpan.FromSeconds(.3));
             
-            shellViewModel.ShowBackButton = true;
-
             _navigationStack.Push(page);
-            
+
             await viewModel.OnAppearing();
 
             _lastPage = shell.CurrentView;
 
+            shell.ContentTrans.PageTransition = new PageSlide(TimeSpan.FromSeconds(.3));
+
             shell.CurrentView = page;
+            shell.ShowBackButton = true;
         }
 
         public async Task GoBack()
@@ -83,7 +82,7 @@ namespace MetroTemplate.Services
                 var viewModel = prevPage.DataContext as ViewModelBase;
 
                 shell.CurrentView = prevPage;
-                
+
                 await viewModel.OnAppearing();
             }
             else
@@ -98,10 +97,10 @@ namespace MetroTemplate.Services
                 }
             }
 
-            shellViewModel.ShowBackButton = _navigationStack.Count > 0;
+            shell.ShowBackButton = _navigationStack.Count > 0;
         }
 
-        public async Task ShowAlert(string title,string msg)
+        public async Task ShowAlert(string title, string msg)
         {
             Dispatcher.UIThread.Invoke(() =>
             {
@@ -111,7 +110,7 @@ namespace MetroTemplate.Services
                 shell.Alert = alert;
                 alert.IsOpen = true;
             });
-            
+
         }
 
         public void CloseAlert()
@@ -127,7 +126,7 @@ namespace MetroTemplate.Services
 
                 alert.IsOpen = false;
             });
-            
+
 
             //shell.Alert = null;
         }

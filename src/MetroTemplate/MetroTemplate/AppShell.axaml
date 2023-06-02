@@ -107,17 +107,21 @@
 				</Grid>
 
 				<Grid Classes="header"
-					  IsVisible="{Binding ShowBackButton}"
+					  IsVisible="{Binding ElementName=appShell,Path=ShowBackButton}"
 					  Background="{DynamicResource BrandColor}">
 					<Grid ColumnDefinitions="*,*,*" Margin="20" >
 						<Button BorderThickness="0"
 								HorizontalAlignment="Left"
 								Command="{Binding GoBackCommand}"
 								VerticalAlignment="Center">
-							<TextBlock FontSize="25"
+							<!--<TextBlock FontSize="25"
 									   Foreground="White"
 									   Text="&#xF060;" FontFamily="{StaticResource Icon}">
 
+							</TextBlock>-->
+
+							<TextBlock>
+								Back
 							</TextBlock>
 						</Button>
 

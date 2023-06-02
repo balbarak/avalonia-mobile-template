@@ -45,10 +45,6 @@ namespace MetroTemplate.Controls
                 _rotateDegree -= 360;
 
             RenderTransform = new RotateTransform(_rotateDegree);
-
-
-            Debug.WriteLine("Speed: " + Speed);
-            Debug.WriteLine("Rotate Degree: " + _rotateDegree);
         }
     }
 }

@@ -14,19 +14,17 @@ namespace MetroTemplate
         public static readonly StyledProperty<UserControl> CurrentViewProperty =
             AvaloniaProperty.Register<AppShell, UserControl>(nameof(CurrentView), defaultValue: null,coerce: OnCurrentViewChanged);
 
-
         public static readonly StyledProperty<AlertView> AlertViewProperty =
             AvaloniaProperty.Register<AppShell, AlertView>(nameof(Alert), defaultValue: null);
 
-        public static readonly StyledProperty<UserControl> CurrentNavigationProperty =
-            AvaloniaProperty.Register<AppShell, UserControl>(nameof(CurrentNavigation), defaultValue: null);
-
+        public static readonly StyledProperty<bool> ShowBackButtonProperty =
+            AvaloniaProperty.Register<AppShell, bool>(nameof(ShowBackButton), defaultValue: false);
 
         public UserControl CurrentView { get => GetValue(CurrentViewProperty); set => SetValue(CurrentViewProperty, value); }
 
-        public UserControl CurrentNavigation { get => GetValue(CurrentNavigationProperty); set => SetValue(CurrentNavigationProperty, value); }
-
         public AlertView Alert { get => GetValue(AlertViewProperty); set => SetValue(AlertViewProperty, value); }
+
+        public bool ShowBackButton { get => GetValue(ShowBackButtonProperty); set => SetValue(ShowBackButtonProperty, value); }
 
         public AppShellViewModel ViewModel => DataContext as AppShellViewModel;
 
