@@ -49,7 +49,6 @@ namespace MetroTemplate
             _timer.Tick += OnTimerTick;
         }
 
-
         public void StartAnimation(double targetValue, Control control, StyledProperty<double> property)
         {
             if (control == null)
@@ -75,6 +74,8 @@ namespace MetroTemplate
                 _timer.Stop();
                 
                 OnAnimationCompleted?.Invoke(this, EventArgs.Empty);
+
+                _control.SetValue(_property, _to);
 
                 return;
             }

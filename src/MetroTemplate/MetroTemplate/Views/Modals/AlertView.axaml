@@ -6,52 +6,10 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="MetroTemplate.Views.AlertView">
 
-	<UserControl.Styles>
-		
-		<Style Selector="ctl|AlertView[IsOpen=True] Rectangle">
-			<Style.Animations>
-				<Animation Duration="0:0:0.30" FillMode="Both">
-					<KeyFrame Cue="0%">
-						<Setter Property="Opacity" Value="0.0"/>
-					</KeyFrame>
-					<KeyFrame Cue="100%" >
-						<Setter Property="Opacity" Value=".6"/>
-					</KeyFrame>
-				</Animation>
-			</Style.Animations>
-		</Style>
-
-		<Style Selector="ctl|AlertView[IsOpen=False] Rectangle">
-			<Style.Animations>
-				<Animation Duration="0:0:0.30" FillMode="Both">
-					<KeyFrame Cue="0%">
-						<Setter Property="Opacity" Value="0.6"/>
-					</KeyFrame>
-					<KeyFrame Cue="100%" >
-						<Setter Property="Opacity" Value="0"/>
-					</KeyFrame>
-				</Animation>
-			</Style.Animations>
-		</Style>
-
-		<Style Selector="ctl|AlertView[IsOpen=True] Grid#Container">
-			<Setter Property="IsVisible" Value="True"/>
-		</Style>
-
-		<Style Selector="ctl|AlertView[IsOpen=False] Grid#Container">
-			<Setter Property="IsVisible" Value="True"/>
-			<Style.Animations>
-				<Animation Duration="0:0:0.30" FillMode="Both">
-					<KeyFrame Cue="100%" >
-						<Setter Property="IsVisible" Value="False"/>
-					</KeyFrame>
-				</Animation>
-			</Style.Animations>
-		</Style>
-	</UserControl.Styles>
 	
-	<Grid x:Name="Container" IsVisible="True">
+	<Grid x:Name="PART_Container" IsVisible="True">
 		<Rectangle Fill="Black"
+				   x:Name="PART_Backdrop"
 				   Opacity="0"
 				   Tapped="OnBackdropClicked" />
 
