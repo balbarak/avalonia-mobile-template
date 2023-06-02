@@ -106,7 +106,7 @@
 					</Grid>
 				</Grid>
 
-				<Grid Classes="header" 
+				<Grid Classes="header"
 					  IsVisible="{Binding ShowBackButton}"
 					  Background="{DynamicResource BrandColor}">
 					<Grid ColumnDefinitions="*,*,*" Margin="20" >
@@ -124,15 +124,14 @@
 					</Grid>
 				</Grid>
 
-				<ContentControl Grid.Row="1" Content="{Binding ElementName=appShell,Path=CurrentView}"/>
 
-				<!--<TransitioningContentControl
-				Grid.Row="1"
-				Content="{Binding ElementName=appShell,Path=CurrentView}">
-				<TransitioningContentControl.PageTransition>
-					<PageSlide Orientation="Horizontal" Duration="0:00:00.500" />
-				</TransitioningContentControl.PageTransition>
-			</TransitioningContentControl>-->
+				<TransitioningContentControl
+					x:Name="ContentTrans"
+					Grid.Row="1"
+					Content="{Binding ElementName=appShell,Path=CurrentView}">
+				</TransitioningContentControl>
+
+
 
 				<Rectangle Grid.RowSpan="2"
 						   IsVisible="True"

@@ -1,5 +1,7 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia.Animation;
+using Avalonia.Controls;
 using Avalonia.Threading;
+using MetroTemplate.Animations;
 using MetroTemplate.ViewModels;
 using MetroTemplate.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,6 +10,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MetroTemplate.Services
@@ -33,6 +36,8 @@ namespace MetroTemplate.Services
             var page = Services.GetService(pageType) as UserControl;
             var viewModel = page.DataContext as ViewModelBase;
 
+            shell.ContentTrans.PageTransition = new CrossFade(TimeSpan.FromSeconds(.3));
+
             await viewModel.OnAppearing();
 
             shell.CurrentView = page;
@@ -46,6 +51,8 @@ namespace MetroTemplate.Services
             var page = Services.GetService(pageType) as UserControl;
             var viewModel = page.DataContext as ViewModelBase;
             var shellViewModel = shell.DataContext as AppShellViewModel;
+
+            shell.ContentTrans.PageTransition = new PageSlide(TimeSpan.FromSeconds(.3));
             
             shellViewModel.ShowBackButton = true;
 
@@ -67,6 +74,8 @@ namespace MetroTemplate.Services
             if (!hasPage)
                 return;
 
+            shell.ContentTrans.PageTransition = new ReversePageSlide(TimeSpan.FromSeconds(.3));
+
             var hasPrevPage = _navigationStack.TryPop(out var prevPage);
 
             if (hasPrevPage)
@@ -74,7 +83,7 @@ namespace MetroTemplate.Services
                 var viewModel = prevPage.DataContext as ViewModelBase;
 
                 shell.CurrentView = prevPage;
-
+                
                 await viewModel.OnAppearing();
             }
             else

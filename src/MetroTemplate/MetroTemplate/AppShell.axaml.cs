@@ -18,23 +18,31 @@ namespace MetroTemplate
         public static readonly StyledProperty<AlertView> AlertViewProperty =
             AvaloniaProperty.Register<AppShell, AlertView>(nameof(Alert), defaultValue: null);
 
+        public static readonly StyledProperty<UserControl> CurrentNavigationProperty =
+            AvaloniaProperty.Register<AppShell, UserControl>(nameof(CurrentNavigation), defaultValue: null);
+
 
         public UserControl CurrentView { get => GetValue(CurrentViewProperty); set => SetValue(CurrentViewProperty, value); }
+
+        public UserControl CurrentNavigation { get => GetValue(CurrentNavigationProperty); set => SetValue(CurrentNavigationProperty, value); }
 
         public AlertView Alert { get => GetValue(AlertViewProperty); set => SetValue(AlertViewProperty, value); }
 
         public AppShellViewModel ViewModel => DataContext as AppShellViewModel;
 
+        public TransitioningContentControl ContentTransition { get;private set; }
+
         public AppShell()
         {
             InitializeComponent();
+
+            ContentTransition = this.Find<TransitioningContentControl>("ContentTrans");
         }
 
         private void OnMenuClicked(object sender,TappedEventArgs args)
         {
             split.IsPaneOpen = !split.IsPaneOpen;
         }
-
 
         private void OnViewChanged(UserControl newView)
         {
