@@ -9,7 +9,7 @@ namespace MetroTemplate.Views
     public partial class AlertView : UserControl
     {
         public static readonly StyledProperty<bool> IsOpenProperty =
-            AvaloniaProperty.Register<AlertView, bool>(nameof(IsOpen), defaultValue: true);
+            AvaloniaProperty.Register<AlertView, bool>(nameof(IsOpen), defaultValue: false);
 
         public bool IsOpen { get => GetValue(IsOpenProperty); set => SetValue(IsOpenProperty, value); }
 

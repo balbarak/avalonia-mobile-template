@@ -19,7 +19,7 @@
 					</Border>
 
 					<Border Classes="card">
-						<ctl:MaterialRing IsRunning="true" Color="Red"/>
+						<ctl:MaterialRing IsRunning="true" Color="Red" Width="50" Height="50"/>
 					</Border>
 				</StackPanel>
 			</RefreshContainer>
