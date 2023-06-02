@@ -8,6 +8,8 @@
 			 xmlns:vm="using:MetroTemplate.ViewModels"
 			 xmlns:views="using:MetroTemplate.Views"
 			 x:DataType="vm:AppShellViewModel"
+			 xmlns:s="using:Avalonia.Svg.Skia"
+			 xmlns:ff="using:Svg"
 			 x:Name="appShell"
              x:Class="MetroTemplate.AppShell">
 
@@ -121,8 +123,9 @@
 							</TextBlock>-->
 
 							<TextBlock>
-								Back
+								Back ..
 							</TextBlock>
+							
 						</Button>
 
 					</Grid>

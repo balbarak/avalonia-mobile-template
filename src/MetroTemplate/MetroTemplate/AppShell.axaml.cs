@@ -33,7 +33,7 @@ namespace MetroTemplate
         public AppShell()
         {
             InitializeComponent();
-
+            
             ContentTransition = this.Find<TransitioningContentControl>("ContentTrans");
         }
 
