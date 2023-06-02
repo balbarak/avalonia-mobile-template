@@ -106,6 +106,24 @@
 					</Grid>
 				</Grid>
 
+				<Grid Classes="header" 
+					  IsVisible="{Binding ShowBackButton}"
+					  Background="{DynamicResource BrandColor}">
+					<Grid ColumnDefinitions="*,*,*" Margin="20" >
+						<Button BorderThickness="0"
+								HorizontalAlignment="Left"
+								Command="{Binding GoBackCommand}"
+								VerticalAlignment="Center">
+							<TextBlock FontSize="25"
+									   Foreground="White"
+									   Text="&#xF060;" FontFamily="{StaticResource Icon}">
+
+							</TextBlock>
+						</Button>
+
+					</Grid>
+				</Grid>
+
 				<ContentControl Grid.Row="1" Content="{Binding ElementName=appShell,Path=CurrentView}"/>
 
 				<!--<TransitioningContentControl

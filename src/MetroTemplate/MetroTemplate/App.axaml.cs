@@ -57,6 +57,7 @@ namespace MetroTemplate
                    services.AddPageTransient<ThemeViewModel, ThemeView>();
                    services.AddPageTransient<HomeViewModel, HomeView>();
                    services.AddPageTransient<ModalViewModel, ModalView>();
+                   services.AddPageTransient<SecondViewModel, SecondView>();
                })
                .ConfigureLogging((hostContext, configLogging) =>
                {

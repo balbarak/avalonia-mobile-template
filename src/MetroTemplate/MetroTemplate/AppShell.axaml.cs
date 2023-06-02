@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using MetroTemplate.Controls;
+using MetroTemplate.ViewModels;
 using MetroTemplate.Views;
 using System;
 
@@ -22,6 +23,8 @@ namespace MetroTemplate
 
         public AlertView Alert { get => GetValue(AlertViewProperty); set => SetValue(AlertViewProperty, value); }
 
+        public AppShellViewModel ViewModel => DataContext as AppShellViewModel;
+
         public AppShell()
         {
             InitializeComponent();
@@ -31,6 +34,7 @@ namespace MetroTemplate
         {
             split.IsPaneOpen = !split.IsPaneOpen;
         }
+
 
         private void OnViewChanged(UserControl newView)
         {
