@@ -9,9 +9,8 @@
         </Border>
     </Design.PreviewWith>
 
-
 	<Style Selector="Grid.page">
-		<Setter Property="Background" Value="{DynamicResource Mute100}"/>
+		<Setter Property="Background" Value="{DynamicResource PageBackground}"/>
 	</Style>
 
 	<Style Selector="Grid.page-content">
