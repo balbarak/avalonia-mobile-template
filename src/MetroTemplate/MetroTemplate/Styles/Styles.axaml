@@ -13,7 +13,7 @@
 		<Setter Property="Background" Value="{DynamicResource PageBackground}"/>
 	</Style>
 
-	<Style Selector="Grid.page-content">
+	<Style Selector="Grid.page-container">
 		<Setter Property="Margin" Value="16"/>
 	</Style>
 	

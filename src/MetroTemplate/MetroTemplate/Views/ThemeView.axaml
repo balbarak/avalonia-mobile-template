@@ -6,77 +6,93 @@
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
              x:Class="MetroTemplate.Views.ThemeView">
 
-	<Border Classes="page">
-
-		<ScrollViewer
+	<Grid Classes="page">
+		<Grid Classes="page-container">
+			<ScrollViewer
 			
 			VerticalScrollBarVisibility="Auto">
 
-			<StackPanel Spacing="10" >
-				<Border Classes="card" VerticalAlignment="Top">
+				<StackPanel Spacing="10" >
+					<Border Classes="card" VerticalAlignment="Top">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Buttons
+							</TextBlock>
 
-					<StackPanel Spacing="10">
-						<TextBlock Classes="card-title">
-							Buttons
-						</TextBlock>
+							<Button Tapped="OnTapped">
+								Brand
+							</Button>
 
-						<Button Tapped="OnTapped">
-							Brand
-						</Button>
+							<Button Classes="btn-primary">
+								Primary
+							</Button>
 
-						<Button Classes="btn-primary">
-							Primary
-						</Button>
+							<Button Classes="btn-success">
+								Success
+							</Button>
 
-						<Button Classes="btn-success">
-							Success
-						</Button>
+							<Button Classes="btn-warning">
+								Warning
+							</Button>
+							<Button Classes="btn-danger">
+								Danger
+							</Button>
 
-						<Button Classes="btn-warning">
-							Warning
-						</Button>
-						<Button Classes="btn-danger">
-							Danger
-						</Button>
+							<controls:LoadingButton IsLoading="{Binding IsButtonLoading}" Command="{Binding LoadingButtonCommand}">
+								Loading Button
+							</controls:LoadingButton>
 
-						<controls:LoadingButton IsLoading="{Binding IsButtonLoading}" Command="{Binding LoadingButtonCommand}">
-							Loading BUtton
-						</controls:LoadingButton>
+						</StackPanel>
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Typography
+							</TextBlock>
+							<TextBlock Classes="h1" FontFamily="{StaticResource	Tajawal}">
+								This is h1 Classes
+							</TextBlock>
 
-					</StackPanel>
-				</Border>
-				<Border Classes="card">
-					<StackPanel Spacing="10">
-						<TextBlock Classes="card-title">
-							Typography
-						</TextBlock>
-						<TextBlock Classes="h1" FontFamily="{StaticResource	Tajawal}">
-							This is h1 Classes
-						</TextBlock>
+							<TextBlock
+								Classes="h2"
+								TextWrapping="Wrap"
+								FontFamily="{StaticResource	Tajawal}">
+								This is h2 Classes
+							</TextBlock>
 
-						<TextBlock
-							Classes="h2"
-							TextWrapping="Wrap"
-							FontFamily="{StaticResource	Tajawal}">
-							This is h2 Classes
-						</TextBlock>
+							<TextBlock
+								Classes="h3"
+								FontFamily="{StaticResource	Tajawal}">
+								This is h3 Clasess
+							</TextBlock>
+						</StackPanel>
 
-						<TextBlock
-							Classes="h3"
-							FontFamily="{StaticResource	Tajawal}">
-							This is h3 Clasess
-						</TextBlock>
-					</StackPanel>
-
-				</Border>
-				
-				
+					</Border>
 
 
-			</StackPanel>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+								
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+								
+							</StackPanel>
+
+						</StackPanel>
+						
+					</Border>
 
 
-		</ScrollViewer>
-	</Border>
+				</StackPanel>
+
+
+			</ScrollViewer>
+		</Grid>
+	</Grid>
 
 </UserControl>

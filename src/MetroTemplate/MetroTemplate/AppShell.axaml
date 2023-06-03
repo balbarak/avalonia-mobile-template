@@ -17,10 +17,8 @@
 	<Design.DataContext>
 		<vm:AppShellViewModel />
 	</Design.DataContext>
-
 	
 	<Grid>
-		
 		<SplitView  x:Name="split" IsPaneOpen="False"
 				   DisplayMode="Overlay">
 			<SplitView.Pane>

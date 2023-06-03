@@ -13,7 +13,7 @@
 	<Grid Classes="page">
 
 		
-		<Grid Classes="page-content">
+		<Grid Classes="page-container">
 			<StackPanel Spacing="10">
 				<Border Classes="card">
 					<TextBlock>
