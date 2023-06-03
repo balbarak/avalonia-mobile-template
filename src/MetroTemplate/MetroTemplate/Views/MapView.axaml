@@ -6,7 +6,87 @@
              x:Class="MetroTemplate.Views.MapView">
 
 
-	<TextBlock>
-		sdf
-	</TextBlock>
+	<!--<TextBlock FontSize="48" FontFamily="{StaticResource Icon}">
+		&#xF060;
+	</TextBlock>-->
+
+	<TabControl>
+		<TabItem Header="Circle" VerticalContentAlignment="Center">
+			<TextBlock Text="I am in the circle page !" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Triangle</TextBlock>
+			</TabItem.Header>
+			<StackPanel>
+				<TextBlock Text="I am in the triangle page ! I'll put a button to show you that each page contains what you want." HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Button>A button in the triangle page !</Button>
+			</StackPanel>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Square</TextBlock>
+			</TabItem.Header>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Square : " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Rectangle Fill="Blue" Width="63" Height="41"/>
+			</StackPanel>
+		</TabItem>
+
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Square</TextBlock>
+			</TabItem.Header>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Square : " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Rectangle Fill="Blue" Width="63" Height="41"/>
+			</StackPanel>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Square</TextBlock>
+			</TabItem.Header>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Square : " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Rectangle Fill="Blue" Width="63" Height="41"/>
+			</StackPanel>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Square</TextBlock>
+			</TabItem.Header>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Square : " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Rectangle Fill="Blue" Width="63" Height="41"/>
+			</StackPanel>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Square</TextBlock>
+			</TabItem.Header>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Square : " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Rectangle Fill="Blue" Width="63" Height="41"/>
+			</StackPanel>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Square</TextBlock>
+			</TabItem.Header>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Square : " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Rectangle Fill="Blue" Width="63" Height="41"/>
+			</StackPanel>
+		</TabItem>
+		<TabItem>
+			<TabItem.Header>
+				<TextBlock VerticalAlignment="Center">Square</TextBlock>
+			</TabItem.Header>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Square : " HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				<Rectangle Fill="Blue" Width="63" Height="41"/>
+			</StackPanel>
+		</TabItem>
+	</TabControl>
+
 </UserControl>

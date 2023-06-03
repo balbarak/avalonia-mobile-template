@@ -23,6 +23,7 @@ namespace MetroTemplate.Activation
             app.MainView = appShell;
 
 
+            await navService.GoToView<MapViewModel>();
         }
 
         public static async Task ActivateDesktop(IClassicDesktopStyleApplicationLifetime app)
@@ -34,7 +35,7 @@ namespace MetroTemplate.Activation
 
             app.MainWindow.Content = App.AppHost.Services.GetService<AppShell>();
 
-            await navService.GoToView<HomeViewModel>();
+            await navService.GoToView<MapViewModel>();
         }
     }
 }

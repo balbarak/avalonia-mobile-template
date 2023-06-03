@@ -1,0 +1,10 @@
+﻿{
+  "author": "balbarak",
+  "name": "Avalonia Metro Mobile Template",
+  "tags": {
+    "language": "C#"
+  },
+  "identity": "AvaloniaMetroTemplate.One",
+  "shortName": "metroApp",
+  "sourceName": "MetroTemplate"
+}

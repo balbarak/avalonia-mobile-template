@@ -6,7 +6,6 @@ namespace MetroTemplate.Views
     {
         public MapView()
         {
-            
             InitializeComponent();
         }
     }

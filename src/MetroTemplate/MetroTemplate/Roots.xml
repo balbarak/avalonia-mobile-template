@@ -3,4 +3,5 @@
   <assembly fullname="MetroTemplate" preserve="All" />
   <assembly fullname="Avalonia.Themes.Fluent" preserve="All" />
   <assembly fullname="Avalonia.Svg.Skia" preserve="All" />
+  <assembly fullname="Mapsui.UI.Avalonia" preserve="All" />
 </linker>
