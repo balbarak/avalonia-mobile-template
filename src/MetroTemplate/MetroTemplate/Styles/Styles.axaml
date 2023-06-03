@@ -10,6 +10,14 @@
     </Design.PreviewWith>
 
 
+	<Style Selector="Grid.page">
+		<Setter Property="Background" Value="{DynamicResource Mute100}"/>
+	</Style>
+
+	<Style Selector="Grid.page-content">
+		<Setter Property="Margin" Value="16"/>
+	</Style>
+	
 	<Style Selector="TextBlock">
 		<Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
 		<Setter Property="FontSize" Value="14"/>

@@ -4,34 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
 			 xmlns:ctl="using:MetroTemplate.Controls"
+			 xmlns:views="using:MetroTemplate.Views"
 			 Background="{DynamicResource PageBackground}"
 			 x:Class="MetroTemplate.Views.HomeView">
 
 
-	<Grid Classes="container">
-		<ScrollViewer>
-			<RefreshContainer>
-				<StackPanel Spacing="10">
-					<Border Classes="card">
-						<StackPanel>
-							<TextBlock Text="Hello"/>
-						</StackPanel>
-					</Border>
 
-					<!--<Border Classes="card">
-						<ctl:MaterialRing IsRunning="true" Color="Red" Width="50" Height="50"/>
-					</Border>-->
+	<Grid Classes="page">
 
-					<Border Classes="card">
-						<Button Command="{Binding GoToSecondViewCommand}">
-							Go To Second View
-						</Button>
-					</Border>
-
-				</StackPanel>
-			</RefreshContainer>
-		</ScrollViewer>
-
-
+		
+		<Grid Classes="page-content">
+			<StackPanel>
+				<Button Command="{Binding GoToSecondViewCommand}">
+					Go To Second View
+				</Button>
+			</StackPanel>
+		</Grid>
 	</Grid>
 </UserControl>

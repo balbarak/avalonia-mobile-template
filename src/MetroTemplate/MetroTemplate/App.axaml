@@ -9,6 +9,7 @@
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceInclude Source='/Styles/Colors.axaml'/>
+				<ResourceInclude Source='/Styles/Resources.axaml'/>
 				<ResourceInclude Source='/Styles/Svg.axaml'/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>

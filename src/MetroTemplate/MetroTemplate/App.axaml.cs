@@ -53,6 +53,7 @@ namespace MetroTemplate
                    services.AddSingleton<INavigationService, NavigationService>();
 
                    services.AddPageSingleton<AppShellViewModel,AppShell>();
+                   services.AddPageSingleton<HeaderViewModel,HeaderView>();
 
                    services.AddPageTransient<ThemeViewModel, ThemeView>();
                    services.AddPageTransient<HomeViewModel, HomeView>();

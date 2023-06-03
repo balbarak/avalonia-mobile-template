@@ -12,7 +12,7 @@ namespace MetroTemplate
     public partial class AppShell : UserControl
     {
         public static readonly StyledProperty<UserControl> CurrentViewProperty =
-            AvaloniaProperty.Register<AppShell, UserControl>(nameof(CurrentView), defaultValue: null,coerce: OnCurrentViewChanged);
+            AvaloniaProperty.Register<AppShell, UserControl>(nameof(CurrentView), defaultValue: null, coerce: OnCurrentViewChanged);
 
         public static readonly StyledProperty<AlertView> AlertViewProperty =
             AvaloniaProperty.Register<AppShell, AlertView>(nameof(Alert), defaultValue: null);
@@ -26,17 +26,17 @@ namespace MetroTemplate
 
         public bool ShowBackButton { get => GetValue(ShowBackButtonProperty); set => SetValue(ShowBackButtonProperty, value); }
 
-        public TransitioningContentControl ContentTransition { get;private set; }
+        public TransitioningContentControl ContentTransition { get; private set; }
 
         public AppShell()
         {
-            
+
             InitializeComponent();
-            
+
             ContentTransition = this.Find<TransitioningContentControl>("ContentTrans");
         }
 
-        private void OnMenuClicked(object sender,TappedEventArgs args)
+        private void OnMenuClicked(object sender, TappedEventArgs args)
         {
             split.IsPaneOpen = !split.IsPaneOpen;
         }
@@ -50,7 +50,7 @@ namespace MetroTemplate
         protected override Size MeasureOverride(Size availableSize)
         {
             split.OpenPaneLength = (availableSize.Width / 100) * 70;
-            
+
             return base.MeasureOverride(availableSize);
         }
 

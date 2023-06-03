@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+					xmlns:local="using:MetroTemplate"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<local:InvertBoolConverter x:Key="InvertedBool"/>
+	
+</ResourceDictionary>
