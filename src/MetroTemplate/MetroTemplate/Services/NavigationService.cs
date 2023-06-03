@@ -19,12 +19,15 @@ namespace MetroTemplate.Services
     {
         private Stack<UserControl> _navigationStack;
         private UserControl _lastPage;
+        private TimeSpan _speed;
+
         public static IDictionary<Type, Type> PageMapping { get; private set; } = new Dictionary<Type, Type>();
 
         public IServiceProvider Services => App.AppHost.Services;
 
         public NavigationService()
         {
+            _speed = TimeSpan.FromSeconds(.3);
             _navigationStack = new Stack<UserControl>();
         }
 
@@ -36,7 +39,7 @@ namespace MetroTemplate.Services
             var page = Services.GetService(pageType) as UserControl;
             var viewModel = page.DataContext as ViewModelBase;
 
-            shell.ContentTrans.PageTransition = new CrossFade(TimeSpan.FromSeconds(.3));
+            shell.ContentTrans.PageTransition = new CrossFade(_speed);
 
             await viewModel.OnAppearing();
 
@@ -58,7 +61,7 @@ namespace MetroTemplate.Services
 
             _lastPage = shell.CurrentView;
 
-            shell.ContentTrans.PageTransition = new PageSlide(TimeSpan.FromSeconds(.3));
+            shell.ContentTrans.PageTransition = new PageSlide(_speed);
 
             shell.CurrentView = page;
             shell.ShowBackButton = true;
@@ -73,7 +76,7 @@ namespace MetroTemplate.Services
             if (!hasPage)
                 return;
 
-            shell.ContentTrans.PageTransition = new ReversePageSlide(TimeSpan.FromSeconds(.3));
+            shell.ContentTrans.PageTransition = new ReversePageSlide(_speed);
 
             var hasPrevPage = _navigationStack.TryPop(out var prevPage);
 

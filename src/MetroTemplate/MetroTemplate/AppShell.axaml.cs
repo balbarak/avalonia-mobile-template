@@ -26,12 +26,11 @@ namespace MetroTemplate
 
         public bool ShowBackButton { get => GetValue(ShowBackButtonProperty); set => SetValue(ShowBackButtonProperty, value); }
 
-        public AppShellViewModel ViewModel => DataContext as AppShellViewModel;
-
         public TransitioningContentControl ContentTransition { get;private set; }
 
         public AppShell()
         {
+            
             InitializeComponent();
             
             ContentTransition = this.Find<TransitioningContentControl>("ContentTrans");

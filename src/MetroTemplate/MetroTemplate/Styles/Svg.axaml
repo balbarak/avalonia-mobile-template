@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Geometry x:Key="BackButtonSvg">
+		M52.5 105L17.5 70L52.5 35L60.6667 43.1667L39.6667 64.1667H122.5V75.8333H39.6667L60.6667 96.8333L52.5 105Z
+	</Geometry>
+	
+</ResourceDictionary>

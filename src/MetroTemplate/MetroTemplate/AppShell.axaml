@@ -4,7 +4,7 @@
 			 xmlns:controls="using:MetroTemplate.Controls"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="390" d:DesignHeight="844"
-			 xmlns:skp="clr-namespace:Avalonia.Controls.Skia;assembly=Avalonia.Controls.Skia"
+			 xmlns:local="using:MetroTemplate"
 			 xmlns:vm="using:MetroTemplate.ViewModels"
 			 xmlns:views="using:MetroTemplate.Views"
 			 x:DataType="vm:AppShellViewModel"
@@ -57,10 +57,13 @@
 		</Style>
 	</UserControl.Styles>
 
+
+	
 	<Grid>
+		
 		<SplitView  x:Name="split" IsPaneOpen="False"
 				   DisplayMode="Overlay">
-
+			
 			<SplitView.Pane>
 				<Grid RowDefinitions="250,*" Background="White">
 					<StackPanel Grid.Row="1">
@@ -92,6 +95,7 @@
 			</SplitView.Pane>
 
 			<Grid RowDefinitions="80,*">
+				
 				<Grid Classes="header" Background="{DynamicResource BrandColor}">
 					<Grid ColumnDefinitions="*,*,*" Margin="20" >
 						<Button
@@ -116,29 +120,22 @@
 								HorizontalAlignment="Left"
 								Command="{Binding GoBackCommand}"
 								VerticalAlignment="Center">
-							<!--<TextBlock FontSize="25"
-									   Foreground="White"
-									   Text="&#xF060;" FontFamily="{StaticResource Icon}">
-
-							</TextBlock>-->
-
-							<TextBlock>
-								Back ..
-							</TextBlock>
-							
+							<Path 
+								Fill="White"
+								Width="28"
+								Height="28"
+								Stretch="Uniform"
+								Data="{StaticResource BackButtonSvg}"/>
 						</Button>
 
 					</Grid>
 				</Grid>
-
 
 				<TransitioningContentControl
 					x:Name="ContentTrans"
 					Grid.Row="1"
 					Content="{Binding ElementName=appShell,Path=CurrentView}">
 				</TransitioningContentControl>
-
-
 
 				<Rectangle Grid.RowSpan="2"
 						   IsVisible="True"

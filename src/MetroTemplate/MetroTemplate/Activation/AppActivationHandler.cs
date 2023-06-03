@@ -34,7 +34,7 @@ namespace MetroTemplate.Activation
 
             app.MainWindow.Content = App.AppHost.Services.GetService<AppShell>();
 
-            await navService.GoToView<ModalViewModel>();
+            await navService.GoToView<HomeViewModel>();
         }
     }
 }
