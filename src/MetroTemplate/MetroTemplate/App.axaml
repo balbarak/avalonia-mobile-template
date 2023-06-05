@@ -15,13 +15,14 @@
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 
-		
-		
+
+
 	</Application.Resources>
-	
-    <Application.Styles>
-        <!--<FluentTheme />-->
-		<SimpleTheme />
+
+	<Application.Styles>
+		<FluentTheme />
+		<!--<SimpleTheme />-->
+
 		<StyleInclude Source="/Controls/HamburgerMenu.axaml"/>
 		<StyleInclude Source="/Controls/ProgressRing.axaml"/>
 		<StyleInclude Source="/Controls/RippleEffect.axaml"/>

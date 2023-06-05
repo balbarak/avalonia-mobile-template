@@ -17,9 +17,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="Avalonia" Version="11.0.0-rc1.1" />
-		<PackageReference Include="Avalonia.Controls.Skia" Version="11.0.0-preview8.2" />
+		<PackageReference Include="Avalonia.Controls.Skia" Version="11.0.0-rc1.1" />
 		<PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0-rc1.1" />
-		<PackageReference Include="Avalonia.Svg.Skia" Version="11.0.0-preview8.2" />
+		<PackageReference Include="Avalonia.Svg.Skia" Version="11.0.0-rc1.1" />
 		<PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0-rc1.1" />
 
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-preview.4.23259.5" />

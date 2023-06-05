@@ -78,6 +78,8 @@
 
 	<Style Selector="Button">
 		<Setter Property="Height" Value="40"/>
+		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="CornerRadius" Value="8"/>
 		<Setter Property="Background" Value="{DynamicResource BrandColor}"/>
 		<Setter Property="Template">

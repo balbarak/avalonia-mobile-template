@@ -88,6 +88,152 @@
 					</Border>
 
 
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+					<Border Classes="card">
+						<StackPanel Spacing="10">
+							<TextBlock Classes="card-title">
+								Spinners
+							</TextBlock>
+
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+
+								<controls:MaterialRing IsRunning="True" Height="48" Width="48"/>
+								<controls:ProgressRing Height="48" Width="48" IsActive="True" />
+
+							</StackPanel>
+
+						</StackPanel>
+
+					</Border>
+
+
 				</StackPanel>
 
 

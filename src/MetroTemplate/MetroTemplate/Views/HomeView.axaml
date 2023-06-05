@@ -26,7 +26,25 @@
 					</Button>
 				</Border>
 
+				<Border Classes="card">
+					<Svg Path="/Assets/Icons/back.svg" />
+				</Border>
+
+
+				<CheckBox x:Name="checkBox">
+					Open
+				</CheckBox>
+				
 			</StackPanel>
+
+			<Popup IsOpen="{Binding ElementName=checkBox,Path=IsChecked}" Placement="Center">
+				<Grid Background="Black" Opacity=".4">
+					<TextBlock>
+						sdf
+					</TextBlock>
+				</Grid>
+
+			</Popup>
 		</Grid>
 	</Grid>
 </UserControl>
