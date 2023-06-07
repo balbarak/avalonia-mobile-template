@@ -18,7 +18,5 @@ namespace MetroTemplate.Controls
         public object Content { get => GetValue(ContentProperty); set => SetValue(ContentProperty, value); }
 
         public bool IsOpen { get => GetValue(IsOpenProperty); set => SetValue(IsOpenProperty, value); }
-
-
     }
 }

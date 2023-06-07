@@ -49,21 +49,26 @@
 					<ContentPresenter
 						VerticalAlignment="Center"
 						Content="{TemplateBinding Content}"/>
+
+
+					<Panel.Styles>
+						<Style Selector="Panel">
+							<Setter Property="IsVisible" Value="False"/>
+						</Style>
+					</Panel.Styles>
 				</Panel>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 
-	<Style Selector="controls|ModalControl[IsOpen=True] Panel#PART_Container">
+	<Style Selector="controls|ModalControl[IsOpen=true] /template/ Panel#PART_Container">
 		<Setter Property="IsVisible" Value="True"/>
 	</Style>
-	
-	<Style Selector="controls|ModalControl[IsOpen=False] Panel#PART_Container">
+
+	<Style Selector="controls|ModalControl[IsOpen=False] /template/  Panel#PART_Container">
+		<Setter Property="IsVisible" Value="True"/>
 		<Style.Animations>
-			<Animation Duration="0:0:0.5" FillMode="Forward">
-				<KeyFrame Cue="0%">
-					<Setter Property="IsVisible" Value="True"/>
-				</KeyFrame>
+			<Animation Duration="0:0:0.5" FillMode="Both">
 				<KeyFrame Cue="100%">
 					<Setter Property="IsVisible" Value="False"/>
 				</KeyFrame>
