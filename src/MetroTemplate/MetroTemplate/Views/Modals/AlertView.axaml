@@ -18,9 +18,7 @@
 					Padding="20"
 					CornerRadius="8"
 					Background="White">
-
 			<!--<TextBlock FontFamily="{StaticResource Icon}" Text="&#xF00c;"/>-->
-
 			<Border.Effect>
 				<DropShadowEffect BlurRadius="5" OffsetX="0" OffsetY="0"/>
 			</Border.Effect>

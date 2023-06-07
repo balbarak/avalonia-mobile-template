@@ -108,9 +108,9 @@
 
 		<!--<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>-->
 
-		<!--<controls:ModalControl>
+		<controls:ModalControl IsOpen="{Binding ElementName=appShell,Path=IsModalOpen}">
 			<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>
-		</controls:ModalControl>-->
+		</controls:ModalControl>
 	</Grid>
 
 

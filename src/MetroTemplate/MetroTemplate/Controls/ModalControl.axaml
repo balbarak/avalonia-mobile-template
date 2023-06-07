@@ -49,7 +49,6 @@
 					</Rectangle>
 
 					<ContentPresenter
-						VerticalAlignment="Center"
 						Content="{TemplateBinding Content}"/>
 
 

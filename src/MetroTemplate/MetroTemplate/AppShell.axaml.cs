@@ -20,11 +20,15 @@ namespace MetroTemplate
         public static readonly StyledProperty<bool> ShowBackButtonProperty =
             AvaloniaProperty.Register<AppShell, bool>(nameof(ShowBackButton), defaultValue: false);
 
+        public static readonly StyledProperty<bool> IsModalOpenProperty =
+            AvaloniaProperty.Register<AppShell, bool>(nameof(IsModalOpen), defaultValue: false);
+
         public UserControl CurrentView { get => GetValue(CurrentViewProperty); set => SetValue(CurrentViewProperty, value); }
 
         public AlertView Alert { get => GetValue(AlertViewProperty); set => SetValue(AlertViewProperty, value); }
 
         public bool ShowBackButton { get => GetValue(ShowBackButtonProperty); set => SetValue(ShowBackButtonProperty, value); }
+        public bool IsModalOpen { get => GetValue(IsModalOpenProperty); set => SetValue(IsModalOpenProperty, value); }
 
         public TransitioningContentControl ContentTransition { get; private set; }
 

@@ -54,7 +54,7 @@ namespace MetroTemplate.Services
             var page = Services.GetService(pageType) as UserControl;
             var viewModel = page.DataContext as ViewModelBase;
             var shellViewModel = shell.DataContext as AppShellViewModel;
-            
+
             _navigationStack.Push(page);
 
             await viewModel.OnAppearing();
@@ -105,31 +105,25 @@ namespace MetroTemplate.Services
 
         public async Task ShowAlert(string title, string msg)
         {
-            Dispatcher.UIThread.Invoke(() =>
-            {
-                var alert = new AlertView(title, msg);
-                var shell = Services.GetService<AppShell>();
+            var alert = new AlertView(title, msg);
+            var shell = Services.GetService<AppShell>();
 
-                shell.Alert = alert;
-                alert.IsOpen = true;
-            });
+            shell.Alert = alert;
+            shell.IsModalOpen = true;
 
         }
 
         public void CloseAlert()
         {
-            Dispatcher.UIThread.Invoke(() =>
-            {
-                var shell = Services.GetService<AppShell>();
 
-                var alert = shell.Alert;
+            var shell = Services.GetService<AppShell>();
 
-                if (alert == null)
-                    return;
+            shell.IsModalOpen = false;
 
-                alert.IsOpen = false;
-            });
+            var alert = shell.Alert;
 
+            if (alert == null)
+                return;
 
             //shell.Alert = null;
         }
