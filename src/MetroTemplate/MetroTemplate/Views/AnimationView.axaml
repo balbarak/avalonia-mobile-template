@@ -57,11 +57,16 @@
 							Modal Animation
 						</CheckBox>
 
+						<Grid>
+						<Button>
+							Click Me
+						</Button>
 						<ctl:ModalControl IsOpen="{Binding	ElementName=fadeCheckbox,Path=IsChecked}" x:Name="modal">
 							<TextBlock Margin="20">
 								Hi
 							</TextBlock>
 						</ctl:ModalControl>
+						</Grid>
 
 						<TextBlock Text="{Binding ElementName=modal,Path=IsOpen}"></TextBlock>
 						

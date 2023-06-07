@@ -10,7 +10,8 @@
 	</Design.PreviewWith>
 
 	<Style Selector="controls|ModalControl">
-		<!-- Set Defaults -->
+		
+		<Setter Property="IsVisible" Value="False"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel x:Name="PART_Container">
@@ -51,28 +52,26 @@
 						Content="{TemplateBinding Content}"/>
 
 
-					<Panel.Styles>
-						<Style Selector="Panel">
-							<Setter Property="IsVisible" Value="False"/>
-						</Style>
-					</Panel.Styles>
 				</Panel>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 
-	<Style Selector="controls|ModalControl[IsOpen=true] /template/ Panel#PART_Container">
-		<Setter Property="IsVisible" Value="True"/>
-	</Style>
 
-	<Style Selector="controls|ModalControl[IsOpen=False] /template/  Panel#PART_Container">
-		<Setter Property="IsVisible" Value="True"/>
+	<Style Selector="controls|ModalControl[IsOpen=False]">
 		<Style.Animations>
-			<Animation Duration="0:0:0.5" FillMode="Both">
+			<Animation Duration="0:0:0.5" >
+				<KeyFrame Cue="0%">
+					<Setter Property="IsVisible" Value="True"/>
+				</KeyFrame>
 				<KeyFrame Cue="100%">
 					<Setter Property="IsVisible" Value="False"/>
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
+	</Style>
+
+	<Style Selector="controls|ModalControl[IsOpen=True]">
+		<Setter Property="IsVisible" Value="True"/>
 	</Style>
 </Styles>
