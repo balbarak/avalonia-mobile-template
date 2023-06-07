@@ -1,0 +1,73 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:MetroTemplate.Controls">
+	<Design.PreviewWith>
+		<controls:ModalControl Width="200" Height="200">
+			<TextBlock>
+				Hello I am Visionary
+			</TextBlock>
+		</controls:ModalControl>
+	</Design.PreviewWith>
+
+	<Style Selector="controls|ModalControl">
+		<!-- Set Defaults -->
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel x:Name="PART_Container">
+					<Rectangle x:Name="PART_Background" Fill="Black">
+						<Rectangle.Styles>
+							<Style Selector="Rectangle#PART_Background">
+								<Setter Property="Opacity" Value="0"/>
+							</Style>
+							<Style Selector="controls|ModalControl[IsOpen=True] /template/ Rectangle#PART_Background">
+								<Style.Animations>
+									<Animation Duration="0:0:0.3" FillMode="Both">
+										<KeyFrame Cue="0%">
+											<Setter Property="Opacity" Value="0.0"/>
+										</KeyFrame>
+										<KeyFrame Cue="100%">
+											<Setter Property="Opacity" Value=".6"/>
+										</KeyFrame>
+									</Animation>
+								</Style.Animations>
+							</Style>
+							<Style Selector="controls|ModalControl[IsOpen=False] /template/ Rectangle#PART_Background">
+								<Style.Animations>
+									<Animation Duration="0:0:0.3" FillMode="Both">
+										<KeyFrame Cue="0%">
+											<Setter Property="Opacity" Value="0.6"/>
+										</KeyFrame>
+										<KeyFrame Cue="100%">
+											<Setter Property="Opacity" Value="0"/>
+										</KeyFrame>
+									</Animation>
+								</Style.Animations>
+							</Style>
+						</Rectangle.Styles>
+					</Rectangle>
+
+					<ContentPresenter
+						VerticalAlignment="Center"
+						Content="{TemplateBinding Content}"/>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+	<Style Selector="controls|ModalControl[IsOpen=True] Panel#PART_Container">
+		<Setter Property="IsVisible" Value="True"/>
+	</Style>
+	
+	<Style Selector="controls|ModalControl[IsOpen=False] Panel#PART_Container">
+		<Style.Animations>
+			<Animation Duration="0:0:0.5" FillMode="Forward">
+				<KeyFrame Cue="0%">
+					<Setter Property="IsVisible" Value="True"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="IsVisible" Value="False"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+</Styles>

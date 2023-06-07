@@ -42,6 +42,12 @@
 							</Grid>
 						</controls:HamburgerMenuItem>
 
+						<controls:HamburgerMenuItem Command="{Binding GoToAnimationCommand}">
+							<Grid ColumnDefinitions="20,*">
+								<TextBlock Text="Animations" Classes="menuText" Grid.Column="1" />
+							</Grid>
+						</controls:HamburgerMenuItem>
+						
 						<controls:HamburgerMenuItem>
 							<Grid ColumnDefinitions="20,*">
 								<TextBlock Text="Settings" Classes="menuText" Grid.Column="1" />
@@ -100,7 +106,11 @@
 
 		</SplitView>
 
-		<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>
+		<!--<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>-->
+
+		<!--<controls:ModalControl>
+			<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>
+		</controls:ModalControl>-->
 	</Grid>
 
 

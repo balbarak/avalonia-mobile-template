@@ -16,6 +16,7 @@ namespace MetroTemplate.ViewModels
         public ICommand GoToModal { get; }
 
         public ICommand GoBackCommand { get; }
+        public ICommand GoToAnimationCommand { get; }
 
 
         public AppShellViewModel()
@@ -24,6 +25,7 @@ namespace MetroTemplate.ViewModels
             GoToTheme = new AsyncRelayCommand(_navService.GoToView<ThemeViewModel>);
             GoToModal = new AsyncRelayCommand(_navService.GoToView<ModalViewModel>);
             GoBackCommand = new AsyncRelayCommand(_navService.GoBack);
+            GoToAnimationCommand = new AsyncRelayCommand(_navService.GoToView<AnimationViewModel>);
         }
 
     }

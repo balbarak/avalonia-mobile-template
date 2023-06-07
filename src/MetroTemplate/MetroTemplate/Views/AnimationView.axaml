@@ -1,0 +1,73 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:ctl="using:MetroTemplate.Controls"
+             x:Class="MetroTemplate.Views.AnimationView">
+
+
+
+	<Grid Classes="page">
+		<Grid Classes="page-container">
+
+			<StackPanel Spacing="10">
+				<Border Classes="card">
+					<StackPanel Spacing="20">
+						<CheckBox x:Name="bgCheckBox">
+							Change Color
+						</CheckBox>
+						<Rectangle Fill="Red" Height="200"
+							  IsVisible="{Binding ElementName=bgCheckBox,Path=IsChecked}">
+							<Rectangle.Styles>
+								<Style Selector="Rectangle[IsVisible=false]">
+									<Style.Animations>
+										<Animation Duration="0:0:1">
+											<KeyFrame Cue="0%">
+												<Setter Property="Opacity" Value="1.0"/>
+											</KeyFrame>
+											<KeyFrame Cue="100%">
+												<Setter Property="Opacity" Value="0.0"/>
+											</KeyFrame>
+										</Animation>
+									</Style.Animations>
+								</Style>
+
+								<Style Selector="Rectangle[IsVisible=true]">
+									<Style.Animations>
+										<Animation Duration="0:0:1">
+											<KeyFrame Cue="0%">
+												<Setter Property="Opacity" Value="0.0"/>
+											</KeyFrame>
+											<KeyFrame Cue="100%">
+												<Setter Property="Opacity" Value="1.0"/>
+											</KeyFrame>
+										</Animation>
+									</Style.Animations>
+								</Style>
+							</Rectangle.Styles>
+						</Rectangle>
+					</StackPanel>
+				</Border>
+
+
+				<Border Classes="card">
+					<StackPanel Spacing="20">
+						<CheckBox x:Name="fadeCheckbox">
+							Modal Animation
+						</CheckBox>
+
+						<ctl:ModalControl IsOpen="{Binding	ElementName=fadeCheckbox,Path=IsChecked}" x:Name="modal">
+							<TextBlock Margin="20">
+								Hi
+							</TextBlock>
+						</ctl:ModalControl>
+
+						<TextBlock Text="{Binding ElementName=modal,Path=IsOpen}"></TextBlock>
+						
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</UserControl>

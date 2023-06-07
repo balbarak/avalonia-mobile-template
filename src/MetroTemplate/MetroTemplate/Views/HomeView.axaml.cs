@@ -1,5 +1,8 @@
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
+using MetroTemplate.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MetroTemplate.Views
 {
@@ -10,5 +13,9 @@ namespace MetroTemplate.Views
             InitializeComponent();
         }
 
+        private void OnCloseModalClicked(object sender, TappedEventArgs args)
+        {
+            checkBox.IsChecked = false;
+        }
     }
 }

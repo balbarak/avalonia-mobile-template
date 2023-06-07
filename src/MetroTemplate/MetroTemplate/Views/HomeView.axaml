@@ -32,19 +32,24 @@
 
 
 				<CheckBox x:Name="checkBox">
-					Open
+					Open Modal
 				</CheckBox>
 				
 			</StackPanel>
 
-			<Popup IsOpen="{Binding ElementName=checkBox,Path=IsChecked}" Placement="Center">
-				<Grid Background="Black" Opacity=".4">
-					<TextBlock>
-						sdf
-					</TextBlock>
-				</Grid>
-
-			</Popup>
+			
+			
 		</Grid>
+
+		<ctl:ModalControl 
+			x:Name="modal"
+			IsOpen="{Binding ElementName=checkBox,Path=IsChecked}">
+			<Grid Background="Yellow">
+				<Button Tapped="OnCloseModalClicked">
+					Close Me
+				</Button>
+			</Grid>
+		</ctl:ModalControl>
+
 	</Grid>
 </UserControl>
