@@ -50,8 +50,6 @@
 
 					<ContentPresenter
 						Content="{TemplateBinding Content}"/>
-
-
 				</Panel>
 			</ControlTemplate>
 		</Setter>

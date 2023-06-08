@@ -108,8 +108,8 @@
 
 		<!--<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>-->
 
-		<controls:ModalControl IsOpen="{Binding ElementName=appShell,Path=IsModalOpen}">
-			<ContentControl Content="{Binding ElementName=appShell,Path=Alert}"/>
+		<controls:ModalControl IsOpen="{Binding ElementName=appShell,Path=IsModalOpen}" Width="300" Height="300">
+			<ContentControl Content="{Binding ElementName=appShell,Path=Alert}" Width="300" Height="300"/>
 		</controls:ModalControl>
 	</Grid>
 
