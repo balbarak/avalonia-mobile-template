@@ -15,14 +15,10 @@
 		
 		<Grid Classes="page-container">
 			<StackPanel Spacing="10">
-				<Border Classes="card">
-					<TextBlock>
-						Hello What is That !
-					</TextBlock>
-				</Border>
+				
 				<Border Classes="card">
 					<Button Command="{Binding GoToSecondViewCommand}">
-						Go To Second View
+						Navigate To Second View
 					</Button>
 				</Border>
 
