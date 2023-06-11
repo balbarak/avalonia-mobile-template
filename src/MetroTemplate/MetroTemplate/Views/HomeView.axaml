@@ -23,7 +23,15 @@
 				</Border>
 
 				<Border Classes="card">
-					<Svg Path="/Assets/Icons/back.svg" />
+					<StackPanel>
+						<TextBlock Classes="card-title">
+							Svg
+						</TextBlock>
+						<StackPanel Orientation="Horizontal">
+							<Svg Path="/Assets/Icons/back.svg" Width="50" />
+						</StackPanel>
+					</StackPanel>
+
 				</Border>
 
 
