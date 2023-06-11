@@ -13,9 +13,5 @@ namespace MetroTemplate.Views
             InitializeComponent();
         }
 
-        private void OnCloseModalClicked(object sender, TappedEventArgs args)
-        {
-            checkBox.IsChecked = false;
-        }
     }
 }

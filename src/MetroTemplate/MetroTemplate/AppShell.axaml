@@ -17,48 +17,63 @@
 	<Design.DataContext>
 		<vm:AppShellViewModel />
 	</Design.DataContext>
-	
+
 	<Grid>
 		<SplitView  x:Name="split" IsPaneOpen="False"
 				   DisplayMode="Overlay">
 			<SplitView.Pane>
 				<Grid RowDefinitions="250,*" Background="White">
-					<StackPanel Grid.Row="1">
+					<StackPanel Grid.Row="1" Orientation="Vertical" Spacing="0">
 						<controls:HamburgerMenuItem Command="{Binding GoToHome}">
-							<Grid ColumnDefinitions="20,*">
+							<StackPanel>
+								<Svg Path="/Assets/Icons/home.svg" />
 								<TextBlock Text="Home" Classes="menuText" Grid.Column="1" />
-							</Grid>
+							</StackPanel>
 						</controls:HamburgerMenuItem>
 
 						<controls:HamburgerMenuItem Command="{Binding GoToTheme}">
-							<Grid ColumnDefinitions="20,*">
+							<StackPanel>
+								<Svg Path="/Assets/Icons/list.svg"  />
 								<TextBlock Text="Theme" Classes="menuText" Grid.Column="1" />
-							</Grid>
+							</StackPanel>
 						</controls:HamburgerMenuItem>
 
 						<controls:HamburgerMenuItem Command="{Binding GoToModal}">
-							<Grid ColumnDefinitions="20,*">
+							<StackPanel>
+								<Svg Path="/Assets/Icons/list.svg"  />
 								<TextBlock Text="Modals" Classes="menuText" Grid.Column="1" />
-							</Grid>
+							</StackPanel>
 						</controls:HamburgerMenuItem>
 
 						<controls:HamburgerMenuItem Command="{Binding GoToAnimationCommand}">
-							<Grid ColumnDefinitions="20,*">
+							<StackPanel>
+								<Svg Path="/Assets/Icons/list.svg"  />
 								<TextBlock Text="Animations" Classes="menuText" Grid.Column="1" />
-							</Grid>
+							</StackPanel>
 						</controls:HamburgerMenuItem>
-						
+
 						<controls:HamburgerMenuItem>
 							<Grid ColumnDefinitions="20,*">
 								<TextBlock Text="Settings" Classes="menuText" Grid.Column="1" />
 							</Grid>
 						</controls:HamburgerMenuItem>
 					</StackPanel>
+
+					<Grid.Styles>
+						<Style Selector="StackPanel">
+							<Setter Property="Spacing" Value="10"/>
+							<Setter Property="Orientation" Value="Horizontal"/>
+						</Style>
+						<Style Selector="Svg">
+							<Setter Property="Width" Value="20"/>
+						</Style>
+					</Grid.Styles>
 				</Grid>
+
 			</SplitView.Pane>
 
 			<Grid RowDefinitions="80,*">
-				
+
 				<Grid Classes="header" Background="{DynamicResource BrandColor}">
 					<Grid ColumnDefinitions="*,*,*" Margin="20" >
 						<Button

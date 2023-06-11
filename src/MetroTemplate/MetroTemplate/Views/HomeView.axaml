@@ -12,10 +12,10 @@
 
 	<Grid Classes="page">
 
-		
+
 		<Grid Classes="page-container">
 			<StackPanel Spacing="10">
-				
+
 				<Border Classes="card">
 					<Button Command="{Binding GoToSecondViewCommand}">
 						Navigate To Second View
@@ -25,35 +25,22 @@
 				<Border Classes="card">
 					<StackPanel>
 						<TextBlock Classes="card-title">
-							Svg
+							Svg Icons
 						</TextBlock>
-						<StackPanel Orientation="Horizontal">
-							<Svg Path="/Assets/Icons/back.svg" Width="50" />
-						</StackPanel>
+						<WrapPanel Orientation="Horizontal">
+							<Svg Path="/Assets/Icons/ban.svg" Width="50" />
+							<Svg Path="/Assets/Icons/bell.svg" Width="50" />
+							<Svg Path="/Assets/Icons/building.svg" Width="50" />
+							<Svg Path="/Assets/Icons/coins.svg" Width="50" />
+							<Svg Path="/Assets/Icons/dotnet.svg" Width="50" />
+							<Svg Path="/Assets/Icons/home.svg" Width="50" />
+							<Svg Path="/Assets/Icons/list.svg" Width="50" />
+						</WrapPanel>
 					</StackPanel>
 
 				</Border>
 
-
-				<CheckBox x:Name="checkBox">
-					Open Modal
-				</CheckBox>
-				
 			</StackPanel>
-
-			
-			
 		</Grid>
-
-		<ctl:ModalControl 
-			x:Name="modal"
-			IsOpen="{Binding ElementName=checkBox,Path=IsChecked}">
-			<Grid Background="Yellow">
-				<Button Tapped="OnCloseModalClicked">
-					Close Me
-				</Button>
-			</Grid>
-		</ctl:ModalControl>
-
 	</Grid>
 </UserControl>
